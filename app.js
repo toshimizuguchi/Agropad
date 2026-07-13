@@ -1,8 +1,4 @@
-/* =============================================
-   Caderno do Campo - app.js
-   Lógica completa: pedidos, produtos, WhatsApp,
-   persistência local, backup/restauração.
-   ============================================= */
+
 
 // ── Estado da aplicação ──
 let state = {
@@ -11,7 +7,7 @@ let state = {
     clientes: [] // nomes únicos para autocomplete
 };
 
-const STORAGE_KEY = 'cadernoDoCampo';
+const STORAGE_KEY = 'AgroPad';
 
 // Filtro de pedidos ativo na aba Pedidos
 let currentOrdersFilter = 'todos';
@@ -92,11 +88,11 @@ function initNavigation() {
     navItems.forEach(btn => {
         btn.addEventListener('click', () => {
             const target = btn.dataset.target;
-            
+
             // Atualizar classes do nav
             navItems.forEach(n => n.classList.remove('active'));
             btn.classList.add('active');
-            
+
             // Mostrar seção
             document.querySelectorAll('.app-section').forEach(s => s.classList.remove('active'));
             const section = document.getElementById(target);
@@ -197,7 +193,7 @@ function renderDashboard() {
     const pendentesContainer = document.getElementById('list-pendentes-dashboard');
     if (pendentesContainer) {
         const allPendentes = state.pedidos.filter(p => (p.status || 'pago') === 'pendente')
-                                          .sort((a, b) => b.criadoEm - a.criadoEm);
+            .sort((a, b) => b.criadoEm - a.criadoEm);
 
         if (allPendentes.length === 0) {
             pendentesContainer.innerHTML = `
@@ -234,8 +230,8 @@ function buildOrderCardHTML(pedido) {
     const total = pedido.itens.reduce((s, i) => s + (i.qtd * i.precoUnitario), 0);
     const itemsPreview = pedido.itens.map(i => `${i.qtd}cx ${i.produto}`).join(', ');
     const status = pedido.status || 'pago';
-    const statusBadge = status === 'pago' 
-        ? `<span class="order-status-badge pago">✅ Pago</span>` 
+    const statusBadge = status === 'pago'
+        ? `<span class="order-status-badge pago">✅ Pago</span>`
         : `<span class="order-status-badge pendente">⏳ Pendente</span>`;
 
     return `
@@ -545,7 +541,7 @@ function sendWhatsApp(orderId) {
     const pedido = state.pedidos.find(p => p.id === orderId);
     if (!pedido) return;
 
-    let msg = `📋 *Pedido - Caderno do Campo*\n`;
+    let msg = `📋 *Pedido - AgroPad*\n`;
     msg += `👤 *Comprador:* ${pedido.cliente}\n`;
     msg += `📅 *Data:* ${formatDate(pedido.data)}\n\n`;
     msg += `📦 *Itens:*\n`;
@@ -563,7 +559,7 @@ function sendWhatsApp(orderId) {
         msg += `\n📝 *Obs:* ${pedido.obs}\n`;
     }
 
-    msg += `\n_Enviado pelo Caderno do Campo 🌿_`;
+    msg += `\n_Enviado pelo AgroPad 🌿_`;
 
     const phone = pedido.telefone ? cleanPhone(pedido.telefone) : '';
     const url = phone
@@ -776,7 +772,7 @@ function exportBackup() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `caderno-do-campo-backup-${todayStr()}.json`;
+    a.download = `AgroPad-backup-${todayStr()}.json`;
     a.click();
     URL.revokeObjectURL(url);
     showToast('Backup baixado! 📦');
@@ -1081,12 +1077,12 @@ function sendWhatsAppCobranca(orderId) {
     const total = pedido.itens.reduce((s, i) => s + (i.qtd * i.precoUnitario), 0);
     const itemsPreview = pedido.itens.map(i => `${i.qtd}cx ${i.produto}`).join(', ');
 
-    let msg = `⚠️ *Lembrete de Pagamento - Caderno do Campo*\n\n`;
+    let msg = `⚠️ *Lembrete de Pagamento - AgroPad*\n\n`;
     msg += `Olá, *${pedido.cliente}*! Passando para lembrar do pedido realizado em *${formatDate(pedido.data)}*:\n`;
     msg += `📦 *Itens:* ${itemsPreview}\n`;
     msg += `💰 *Valor total:* *${formatCurrency(total)}*\n\n`;
     msg += `Se você já efetuou o pagamento, por favor envie o comprovante. Caso contrário, seguem os dados para pagamento. Obrigado! 🙏\n\n`;
-    msg += `_Mensagem enviada via Caderno do Campo 🌿_`;
+    msg += `_Mensagem enviada via AgroPad 🌿_`;
 
     const phone = pedido.telefone ? cleanPhone(pedido.telefone) : '';
     const url = phone
