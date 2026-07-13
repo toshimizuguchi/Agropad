@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Caderno do Campo - Anote seus pedidos de chuchu e pitaya para o CEAGESP de forma rápida e fácil.">
+    <title>Caderno do Campo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <span class="logo-emoji">🌿</span>
+                <h1>Caderno do Campo</h1>
+            </div>
+            <span class="header-badge">CEAGESP</span>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-content">
+            
+            <!-- SECTION: PAINEL -->
+            <section id="section-painel" class="app-section active">
+                <div class="section-header">
+                    <h2>Resumo de Vendas</h2>
+                    <p class="section-subtitle" id="painel-periodo-label">Este mês</p>
+                </div>
+
+                <!-- Filtro de período -->
+                <div class="period-filter">
+                    <button class="period-btn" data-period="hoje">Hoje</button>
+                    <button class="period-btn active" data-period="mes">Este Mês</button>
+                    <button class="period-btn" data-period="tudo">Tudo</button>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card card-faturamento">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Faturamento</span>
+                            <span id="stat-faturamento" class="stat-value">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-card-mini card-chuchu">
+                            <span class="mini-emoji">🥒</span>
+                            <span class="mini-label">Chuchu</span>
+                            <span id="stat-cx-chuchu" class="mini-value">0 cx</span>
+                        </div>
+                        <div class="stat-card-mini card-pitaya">
+                            <span class="mini-emoji">🐉</span>
+                            <span class="mini-label">Pitaya</span>
+                            <span id="stat-cx-pitaya" class="mini-value">0 cx</span>
+                        </div>
+                    </div>
+                    <div class="stat-card card-pendente">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-info">
+                            <span class="stat-label">A Receber (Pendente)</span>
+                            <span id="stat-pendente" class="stat-value text-warning">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <div class="stat-card card-pedidos-count">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-info">
+                            <span class="stat-label">Pedidos Anotados</span>
+                            <span id="stat-pedidos" class="stat-value">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedidos Pendentes de Cobrança -->
+                <div class="card-section card-section-warning" id="section-pendentes-painel">
+                    <div class="card-section-header">
+                        <h3>⚠️ Pendentes de Pagamento</h3>
+                    </div>
+                    <div id="list-pendentes-dashboard" class="orders-list">
+                        <div class="empty-state">
+                            <p>Nenhum pedido pendente! 👍</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Últimos Pedidos -->
+                <div class="card-section">
+                    <div class="card-section-header">
+                        <h3>Últimos Pedidos</h3>
+                    </div>
+                    <div id="list-ultimos-pedidos" class="orders-list">
+                        <div class="empty-state">
+                            <span class="empty-icon">📝</span>
+                            <p>Nenhum pedido anotado ainda.</p>
+                            <p class="empty-hint">Toque em <strong>"+ Anotar"</strong> para começar!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: NOVO PEDIDO -->
+            <section id="section-novo-pedido" class="app-section">
+                <div class="section-header">
+                    <h2 id="form-pedido-title">Anotar Pedido</h2>
+                    <p class="section-subtitle">Registre a venda de caixas</p>
+                </div>
+
+                <form id="form-pedido" class="styled-form" onsubmit="event.preventDefault();">
+                    <input type="hidden" id="edit-pedido-id" value="">
+                    
+                    <!-- Cliente -->
+                    <div class="form-group">
+                        <label for="pedido-cliente">Comprador <span class="required">*</span></label>
+                        <div class="input-with-autocomplete">
+                            <input type="text" id="pedido-cliente" placeholder="Nome do comprador" required autocomplete="off">
+                            <div id="cliente-autocomplete-list" class="autocomplete-items"></div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="form-group">
+                        <label for="pedido-telefone">WhatsApp (opcional)</label>
+                        <input type="tel" id="pedido-telefone" placeholder="(12) 99999-9999">
+                    </div>
+
+                    <!-- Data -->
+                    <div class="form-group">
+                        <label for="pedido-data">Data</label>
+                        <input type="date" id="pedido-data" required>
+                    </div>
+
+                    <!-- Status de Pagamento -->
+                    <div class="form-group">
+                        <label>Pagamento</label>
+                        <div class="payment-toggle">
+                            <label class="toggle-option">
+                                <input type="radio" name="pedido-status" value="pago" checked>
+                                <span class="toggle-btn toggle-pago">✅ Pago</span>
+                            </label>
+                            <label class="toggle-option">
+                                <input type="radio" name="pedido-status" value="pendente">
+                                <span class="toggle-btn toggle-pendente">⏳ Pendente</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Itens do Pedido -->
+                    <div class="form-section-divider">
+                        <h3>Caixas</h3>
+                    </div>
+
+                    <div class="order-items-container" id="order-items-list">
+                        <!-- Inserido via JS -->
+                    </div>
+                    
+                    <button type="button" id="btn-add-item" class="btn btn-add-item">
+                        <span>＋</span> Adicionar Produto
+                    </button>
+
+                    <!-- Observação -->
+                    <div class="form-group">
+                        <label for="pedido-obs">Observação (opcional)</label>
+                        <textarea id="pedido-obs" rows="2" placeholder="Ex: entregar na doca 5..."></textarea>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="order-total-box">
+                        <span class="total-label">Total do Pedido</span>
+                        <span id="pedido-total-val" class="total-value">R$ 0,00</span>
+                    </div>
+
+                    <!-- Ações -->
+                    <div class="form-actions">
+                        <button type="button" id="btn-cancelar-pedido" class="btn btn-outline">Cancelar</button>
+                        <button type="submit" id="btn-salvar-pedido" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- SECTION: PEDIDOS -->
+            <section id="section-pedidos" class="app-section">
+                <div class="section-header">
+                    <h2>Pedidos</h2>
+                    <p class="section-subtitle">Histórico completo de vendas</p>
+                </div>
+
+                <div class="filters-bar">
+                    <div class="search-input-wrapper">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="search-pedidos" placeholder="Buscar comprador...">
+                    </div>
+                    <div class="filter-chips">
+                        <button class="filter-chip active" data-filter="todos">Todos</button>
+                        <button class="filter-chip" data-filter="pendente">⏳ Pendentes</button>
+                        <button class="filter-chip" data-filter="pago">✅ Pagos</button>
+                    </div>
+                </div>
+
+                <div id="all-orders-list" class="orders-list">
+                    <!-- Carregado via JS -->
+                </div>
+            </section>
+
+            <!-- SECTION: PRODUTOS -->
+            <section id="section-produtos" class="app-section">
+                <div class="section-header">
+                    <h2>Meus Produtos</h2>
+                    <p class="section-subtitle">Preço por caixa de cada produto</p>
+                </div>
+
+                <form id="form-produto" class="styled-form" onsubmit="event.preventDefault();">
+                    <input type="hidden" id="edit-produto-id" value="">
+                    <div class="form-group">
+                        <label for="prod-nome">Nome do Produto</label>
+                        <input type="text" id="prod-nome" placeholder="Ex: Pitaya Vermelha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prod-preco">Preço da Caixa (R$)</label>
+                        <input type="number" id="prod-preco" step="0.01" min="0" placeholder="45.00" required>
+                    </div>
+                    <div class="form-actions-inline">
+                        <button type="submit" id="btn-salvar-produto" class="btn btn-primary btn-full">Salvar Produto</button>
+                        <button type="button" id="btn-cancelar-produto" class="btn btn-outline btn-full hidden">Cancelar</button>
+                    </div>
+                </form>
+
+                <div class="card-section" style="margin-top:20px">
+                    <div class="card-section-header"><h3>Produtos Cadastrados</h3></div>
+                    <div id="products-list" class="products-list">
+                        <!-- Carregado via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: AJUSTES -->
+            <section id="section-config" class="app-section">
+                <div class="section-header">
+                    <h2>Ajustes</h2>
+                    <p class="section-subtitle">Backup e configurações</p>
+                </div>
+
+                <div class="config-card">
+                    <h3>📦 Cópia de Segurança</h3>
+                    <p>Salve uma cópia dos seus dados para não perder caso troque de celular ou limpe o navegador.</p>
+                    <div class="config-actions">
+                        <button id="btn-backup-export" class="btn btn-outline btn-full">
+                            ⬆️ Fazer Backup
+                        </button>
+                        <div class="file-input-wrapper">
+                            <button class="btn btn-outline btn-full btn-file-dummy">
+                                ⬇️ Restaurar Backup
+                            </button>
+                            <input type="file" id="btn-backup-import" accept=".json">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-card danger-zone">
+                    <h3>⚠️ Zona de Perigo</h3>
+                    <p>Apagar todos os pedidos e produtos cadastrados permanentemente.</p>
+                    <button id="btn-clear-all" class="btn btn-danger btn-full">Apagar Tudo</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="app-nav">
+            <button class="nav-item active" data-target="section-painel">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Painel</span>
+            </button>
+            <button class="nav-item" data-target="section-pedidos">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Pedidos</span>
+            </button>
+            <button class="nav-item nav-item-main" data-target="section-novo-pedido">
+                <div class="nav-icon-circle">
+                    <span class="plus-icon">＋</span>
+                </div>
+                <span class="nav-label">Anotar</span>
+            </button>
+            <button class="nav-item" data-target="section-produtos">
+                <span class="nav-icon">🥒</span>
+                <span class="nav-label">Produtos</span>
+            </button>
+            <button class="nav-item" data-target="section-config">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">Ajustes</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Modal de Detalhes do Pedido -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Detalhes do Pedido</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="order-modal-body"></div>
+            <div class="modal-footer">
+                <button id="modal-btn-whatsapp" class="btn btn-whatsapp btn-full">📱 Enviar pelo WhatsApp</button>
+                <button id="modal-btn-cobrar" class="btn btn-cobrar btn-full hidden">💸 Cobrar pelo WhatsApp</button>
+                <button id="modal-btn-toggle-status" class="btn btn-success btn-full">✅ Marcar como Pago</button>
+                <button id="modal-btn-editar" class="btn btn-outline btn-full">✏️ Editar</button>
+                <button id="modal-btn-excluir" class="btn btn-danger btn-full">🗑️ Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
