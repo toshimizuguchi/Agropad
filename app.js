@@ -13,6 +13,14 @@ let state = {
 
 const STORAGE_KEY = 'cadernoDoCampo';
 
+// Filtro de pedidos ativo na aba Pedidos
+let currentOrdersFilter = 'todos';
+
+const NOME_MESES = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+];
+
 // ── Utilitários ──
 function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
@@ -98,7 +106,10 @@ function initNavigation() {
 
             // Refresh de listas quando entra na aba
             if (target === 'section-painel') renderDashboard();
-            if (target === 'section-pedidos') renderAllOrders();
+            if (target === 'section-pedidos') {
+                populateMonthFilter();
+                renderAllOrders();
+            }
             if (target === 'section-produtos') renderProducts();
             if (target === 'section-novo-pedido') {
                 // Se não estiver editando, limpar formulário
@@ -152,20 +163,28 @@ function renderDashboard() {
     const orders = getFilteredOrders();
 
     let totalFaturamento = 0;
+    let totalPendente = 0;
     let totalCxChuchu = 0;
     let totalCxPitaya = 0;
 
     orders.forEach(p => {
+        const status = p.status || 'pago';
+        let orderTotal = 0;
         p.itens.forEach(item => {
             const subtotal = item.qtd * item.precoUnitario;
-            totalFaturamento += subtotal;
+            orderTotal += subtotal;
             const nomeLower = item.produto.toLowerCase();
             if (nomeLower.includes('chuchu')) totalCxChuchu += item.qtd;
             else if (nomeLower.includes('pitaya')) totalCxPitaya += item.qtd;
         });
+        totalFaturamento += orderTotal;
+        if (status === 'pendente') {
+            totalPendente += orderTotal;
+        }
     });
 
     document.getElementById('stat-faturamento').textContent = formatCurrency(totalFaturamento);
+    document.getElementById('stat-pendente').textContent = formatCurrency(totalPendente);
     document.getElementById('stat-cx-chuchu').textContent = totalCxChuchu + ' cx';
     document.getElementById('stat-cx-pitaya').textContent = totalCxPitaya + ' cx';
     document.getElementById('stat-pedidos').textContent = orders.length;
@@ -173,6 +192,23 @@ function renderDashboard() {
     // Período label
     const labels = { 'hoje': 'Hoje', 'mes': 'Este mês', 'tudo': 'Todo o período' };
     document.getElementById('painel-periodo-label').textContent = labels[currentPeriod] || '';
+
+    // Renderizar pendentes de cobrança (todos do sistema, independentemente do filtro)
+    const pendentesContainer = document.getElementById('list-pendentes-dashboard');
+    if (pendentesContainer) {
+        const allPendentes = state.pedidos.filter(p => (p.status || 'pago') === 'pendente')
+                                          .sort((a, b) => b.criadoEm - a.criadoEm);
+
+        if (allPendentes.length === 0) {
+            pendentesContainer.innerHTML = `
+                <div class="empty-state">
+                    <p>Nenhum pedido pendente! 👍</p>
+                </div>`;
+        } else {
+            pendentesContainer.innerHTML = allPendentes.map(p => buildOrderCardHTML(p)).join('');
+            attachOrderCardListeners(pendentesContainer);
+        }
+    }
 
     // Últimos pedidos (5 mais recentes do período)
     const container = document.getElementById('list-ultimos-pedidos');
@@ -185,16 +221,22 @@ function renderDashboard() {
                 <p>Nenhum pedido neste período.</p>
                 <p class="empty-hint">Toque em <strong>"+ Anotar"</strong> para começar!</p>
             </div>`;
-        return;
+    } else {
+        container.innerHTML = recent.map(p => buildOrderCardHTML(p)).join('');
+        attachOrderCardListeners(container);
     }
 
-    container.innerHTML = recent.map(p => buildOrderCardHTML(p)).join('');
-    attachOrderCardListeners(container);
+    // Renderizar Histórico Mensal
+    renderMonthlyHistory();
 }
 
 function buildOrderCardHTML(pedido) {
     const total = pedido.itens.reduce((s, i) => s + (i.qtd * i.precoUnitario), 0);
     const itemsPreview = pedido.itens.map(i => `${i.qtd}cx ${i.produto}`).join(', ');
+    const status = pedido.status || 'pago';
+    const statusBadge = status === 'pago' 
+        ? `<span class="order-status-badge pago">✅ Pago</span>` 
+        : `<span class="order-status-badge pendente">⏳ Pendente</span>`;
 
     return `
         <div class="order-card" data-id="${pedido.id}">
@@ -204,7 +246,7 @@ function buildOrderCardHTML(pedido) {
             </div>
             <div class="order-items-preview">${itemsPreview}</div>
             <div class="order-card-bottom">
-                <span>📅 ${formatDate(pedido.data)}</span>
+                <span>📅 ${formatDate(pedido.data)} ${statusBadge}</span>
                 <button class="order-whatsapp-mini" data-id="${pedido.id}" title="Enviar WhatsApp">📱</button>
             </div>
         </div>`;
@@ -231,18 +273,34 @@ function attachOrderCardListeners(container) {
 function renderAllOrders() {
     const container = document.getElementById('all-orders-list');
     const searchVal = (document.getElementById('search-pedidos').value || '').toLowerCase().trim();
+    const monthFilterVal = document.getElementById('filter-mes-pedidos').value;
 
     let filtered = [...state.pedidos].sort((a, b) => b.criadoEm - a.criadoEm);
 
+    // Filtro de Busca
     if (searchVal) {
         filtered = filtered.filter(p => p.cliente.toLowerCase().includes(searchVal));
+    }
+
+    // Filtro de Pago/Pendente
+    if (currentOrdersFilter !== 'todos') {
+        filtered = filtered.filter(p => (p.status || 'pago') === currentOrdersFilter);
+    }
+
+    // Filtro por Mês
+    if (monthFilterVal !== 'todos') {
+        filtered = filtered.filter(p => {
+            if (!p.data) return false;
+            const [year, monthStr] = p.data.split('-');
+            return `${year}-${monthStr}` === monthFilterVal;
+        });
     }
 
     if (filtered.length === 0) {
         container.innerHTML = `
             <div class="empty-state">
                 <span class="empty-icon">📋</span>
-                <p>${searchVal ? 'Nenhum pedido encontrado.' : 'Nenhum pedido anotado ainda.'}</p>
+                <p>Nenhum pedido encontrado com os filtros selecionados.</p>
             </div>`;
         return;
     }
@@ -260,6 +318,10 @@ function resetOrderForm() {
     document.getElementById('pedido-data').value = todayStr();
     document.getElementById('pedido-obs').value = '';
     document.getElementById('pedido-total-val').textContent = 'R$ 0,00';
+
+    // Reset status to "pago"
+    const radioPago = document.querySelector('input[name="pedido-status"][value="pago"]');
+    if (radioPago) radioPago.checked = true;
 
     const list = document.getElementById('order-items-list');
     list.innerHTML = '';
@@ -291,6 +353,12 @@ function addOrderItemRow(data = null) {
                 <label>Preço/Caixa (R$)</label>
                 <input type="number" class="item-preco" min="0" step="0.01" value="${data ? data.precoUnitario : ''}" placeholder="0,00" inputmode="decimal">
             </div>
+        </div>
+        <div class="item-row-price-update">
+            <label class="price-update-label">
+                <input type="checkbox" class="chk-atualizar-preco" checked>
+                <span>Salvar como preço padrão</span>
+            </label>
         </div>
         <div class="item-subtotal">= ${data ? formatCurrency(data.qtd * data.precoUnitario) : 'R$ 0,00'}</div>
     `;
@@ -376,6 +444,23 @@ function saveOrder() {
     if (!cliente) { showToast('Preencha o nome do comprador.'); return; }
     if (itens.length === 0) { showToast('Adicione pelo menos um produto.'); return; }
 
+    const statusRadio = document.querySelector('input[name="pedido-status"]:checked');
+    const status = statusRadio ? statusRadio.value : 'pago';
+
+    // Atualizar preços padrões dos produtos se os checkboxes estiverem marcados
+    document.querySelectorAll('.order-item-row').forEach(row => {
+        const prodId = row.querySelector('.item-produto').value;
+        const preco = parseFloat(row.querySelector('.item-preco').value) || 0;
+        const chkUpdate = row.querySelector('.chk-atualizar-preco');
+
+        if (chkUpdate && chkUpdate.checked && preco > 0) {
+            const prodIdx = state.produtos.findIndex(p => p.id === prodId);
+            if (prodIdx !== -1) {
+                state.produtos[prodIdx].preco = preco;
+            }
+        }
+    });
+
     const editId = document.getElementById('edit-pedido-id').value;
 
     if (editId) {
@@ -387,6 +472,7 @@ function saveOrder() {
             state.pedidos[idx].data = data;
             state.pedidos[idx].obs = obs;
             state.pedidos[idx].itens = itens;
+            state.pedidos[idx].status = status;
         }
         showToast('Pedido atualizado! ✅');
     } else {
@@ -398,6 +484,7 @@ function saveOrder() {
             data,
             obs,
             itens,
+            status,
             criadoEm: Date.now()
         });
         showToast('Pedido salvo! ✅');
@@ -425,6 +512,11 @@ function editOrder(id) {
     document.getElementById('pedido-telefone').value = pedido.telefone || '';
     document.getElementById('pedido-data').value = pedido.data;
     document.getElementById('pedido-obs').value = pedido.obs || '';
+
+    // Preencher o status de pagamento
+    const status = pedido.status || 'pago';
+    const radio = document.querySelector(`input[name="pedido-status"][value="${status}"]`);
+    if (radio) radio.checked = true;
 
     const list = document.getElementById('order-items-list');
     list.innerHTML = '';
@@ -501,10 +593,17 @@ function openOrderModal(id) {
         </div>`;
     }).join('');
 
+    const status = pedido.status || 'pago';
+    const statusLabel = status === 'pago' ? '✅ Pago' : '⏳ Pendente';
+
     body.innerHTML = `
         <div class="modal-detail-row">
             <span class="modal-detail-label">Comprador</span>
             <span class="modal-detail-value">${pedido.cliente}</span>
+        </div>
+        <div class="modal-detail-row">
+            <span class="modal-detail-label">Status</span>
+            <span class="modal-detail-value">${statusLabel}</span>
         </div>
         <div class="modal-detail-row">
             <span class="modal-detail-label">Data</span>
@@ -524,6 +623,20 @@ function openOrderModal(id) {
         </div>
         ${pedido.obs ? `<div class="modal-obs">📝 ${pedido.obs}</div>` : ''}
     `;
+
+    // Configurar botões do modal conforme o status de pagamento
+    const btnToggle = document.getElementById('modal-btn-toggle-status');
+    const btnCobrar = document.getElementById('modal-btn-cobrar');
+
+    if (status === 'pendente') {
+        btnToggle.textContent = '✅ Marcar como Pago';
+        btnToggle.className = 'btn btn-success btn-full';
+        btnCobrar.classList.remove('hidden');
+    } else {
+        btnToggle.textContent = '⏳ Marcar como Pendente';
+        btnToggle.className = 'btn btn-outline btn-full';
+        btnCobrar.classList.add('hidden');
+    }
 
     document.getElementById('order-modal').classList.add('active');
 }
@@ -740,6 +853,22 @@ function initEventListeners() {
     // Busca de pedidos
     document.getElementById('search-pedidos').addEventListener('input', renderAllOrders);
 
+    // Chips de filtros na aba Pedidos
+    document.querySelectorAll('.filter-chips .filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('.filter-chips .filter-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            currentOrdersFilter = chip.dataset.filter;
+            renderAllOrders();
+        });
+    });
+
+    // Filtro de mês na aba Pedidos
+    const filterMes = document.getElementById('filter-mes-pedidos');
+    if (filterMes) {
+        filterMes.addEventListener('change', renderAllOrders);
+    }
+
     // Modal
     document.querySelector('.close-modal').addEventListener('click', closeModal);
     document.getElementById('order-modal').addEventListener('click', (e) => {
@@ -748,6 +877,14 @@ function initEventListeners() {
 
     document.getElementById('modal-btn-whatsapp').addEventListener('click', () => {
         if (currentModalOrderId) sendWhatsApp(currentModalOrderId);
+    });
+
+    document.getElementById('modal-btn-cobrar').addEventListener('click', () => {
+        if (currentModalOrderId) sendWhatsAppCobranca(currentModalOrderId);
+    });
+
+    document.getElementById('modal-btn-toggle-status').addEventListener('click', () => {
+        if (currentModalOrderId) toggleOrderStatus(currentModalOrderId);
     });
 
     document.getElementById('modal-btn-editar').addEventListener('click', () => {
@@ -774,6 +911,191 @@ function initEventListeners() {
     document.getElementById('btn-clear-all').addEventListener('click', clearAllData);
 }
 
+// ── FUNÇÕES AUXILIARES DE HISTÓRICO E COBRANÇA ──
+function getMonthlyHistory() {
+    const monthlyData = {};
+
+    state.pedidos.forEach(p => {
+        if (!p.data) return;
+        const [year, monthStr] = p.data.split('-');
+        const monthKey = `${year}-${monthStr}`;
+
+        if (!monthlyData[monthKey]) {
+            monthlyData[monthKey] = {
+                key: monthKey,
+                year: parseInt(year),
+                month: parseInt(monthStr) - 1,
+                total: 0,
+                pago: 0,
+                pendente: 0,
+                chuchu: 0,
+                pitaya: 0
+            };
+        }
+
+        const data = monthlyData[monthKey];
+        const status = p.status || 'pago';
+        let orderTotal = 0;
+
+        p.itens.forEach(item => {
+            const subtotal = item.qtd * item.precoUnitario;
+            orderTotal += subtotal;
+            const nomeLower = item.produto.toLowerCase();
+            if (nomeLower.includes('chuchu')) {
+                data.chuchu += item.qtd;
+            } else if (nomeLower.includes('pitaya')) {
+                data.pitaya += item.qtd;
+            }
+        });
+
+        data.total += orderTotal;
+        if (status === 'pendente') {
+            data.pendente += orderTotal;
+        } else {
+            data.pago += orderTotal;
+        }
+    });
+
+    return Object.values(monthlyData).sort((a, b) => b.key.localeCompare(a.key));
+}
+
+function renderMonthlyHistory() {
+    const container = document.getElementById('list-historico-mensal');
+    if (!container) return;
+
+    const monthlyHistory = getMonthlyHistory();
+
+    if (monthlyHistory.length === 0) {
+        container.innerHTML = `
+            <div class="empty-state">
+                <p>Nenhum histórico disponível ainda.</p>
+            </div>`;
+        return;
+    }
+
+    container.innerHTML = monthlyHistory.map(m => {
+        const monthName = `${NOME_MESES[m.month]} de ${m.year}`;
+        const pctPago = m.total > 0 ? (m.pago / m.total) * 100 : 0;
+        const pctPendente = m.total > 0 ? (m.pendente / m.total) * 100 : 0;
+
+        return `
+            <div class="monthly-item" data-month-key="${m.key}">
+                <div class="monthly-header">
+                    <span class="monthly-name">${monthName}</span>
+                    <span class="monthly-total">${formatCurrency(m.total)}</span>
+                </div>
+                <div class="monthly-progress-bar">
+                    <div class="progress-pago" style="width: ${pctPago}%" title="Pago: ${formatCurrency(m.pago)}"></div>
+                    <div class="progress-pendente" style="width: ${pctPendente}%" title="Pendente: ${formatCurrency(m.pendente)}"></div>
+                </div>
+                <div class="monthly-details">
+                    <div class="monthly-detail-col">
+                        <span class="detail-val text-success">${formatCurrency(m.pago)}</span>
+                        <span class="detail-lbl">Pago</span>
+                    </div>
+                    <div class="monthly-detail-col">
+                        <span class="detail-val text-warning">${formatCurrency(m.pendente)}</span>
+                        <span class="detail-lbl">Pendente</span>
+                    </div>
+                    <div class="monthly-detail-col">
+                        <span class="detail-val">${m.chuchu} cx</span>
+                        <span class="detail-lbl">Chuchu</span>
+                    </div>
+                    <div class="monthly-detail-col">
+                        <span class="detail-val">${m.pitaya} cx</span>
+                        <span class="detail-lbl">Pitaya</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    // Listener para clique no histórico mensal
+    container.querySelectorAll('.monthly-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const monthKey = item.dataset.monthKey;
+            const select = document.getElementById('filter-mes-pedidos');
+            if (select) {
+                select.value = monthKey;
+            }
+            navigateTo('section-pedidos');
+            // Atualizar classes de navegação
+            document.querySelectorAll('.nav-item').forEach(n => {
+                n.classList.toggle('active', n.dataset.target === 'section-pedidos');
+            });
+            renderAllOrders();
+        });
+    });
+}
+
+function populateMonthFilter() {
+    const select = document.getElementById('filter-mes-pedidos');
+    if (!select) return;
+
+    const savedValue = select.value;
+    select.innerHTML = '<option value="todos">Todos os meses</option>';
+
+    const uniqueMonths = new Set();
+    state.pedidos.forEach(p => {
+        if (!p.data) return;
+        const [year, monthStr] = p.data.split('-');
+        uniqueMonths.add(`${year}-${monthStr}`);
+    });
+
+    const sortedMonths = Array.from(uniqueMonths).sort().reverse();
+
+    sortedMonths.forEach(mKey => {
+        const [year, monthStr] = mKey.split('-');
+        const monthName = `${NOME_MESES[parseInt(monthStr) - 1]} de ${year}`;
+        const option = document.createElement('option');
+        option.value = mKey;
+        option.textContent = monthName;
+        select.appendChild(option);
+    });
+
+    if (Array.from(select.options).some(opt => opt.value === savedValue)) {
+        select.value = savedValue;
+    } else {
+        select.value = 'todos';
+    }
+}
+
+function toggleOrderStatus(id) {
+    const pedido = state.pedidos.find(p => p.id === id);
+    if (!pedido) return;
+
+    const currentStatus = pedido.status || 'pago';
+    pedido.status = currentStatus === 'pago' ? 'pendente' : 'pago';
+
+    saveState();
+    closeModal();
+    renderDashboard();
+    renderAllOrders();
+    showToast(`Pedido marcado como ${pedido.status === 'pago' ? 'Pago ✅' : 'Pendente ⏳'}`);
+}
+
+function sendWhatsAppCobranca(orderId) {
+    const pedido = state.pedidos.find(p => p.id === orderId);
+    if (!pedido) return;
+
+    const total = pedido.itens.reduce((s, i) => s + (i.qtd * i.precoUnitario), 0);
+    const itemsPreview = pedido.itens.map(i => `${i.qtd}cx ${i.produto}`).join(', ');
+
+    let msg = `⚠️ *Lembrete de Pagamento - Caderno do Campo*\n\n`;
+    msg += `Olá, *${pedido.cliente}*! Passando para lembrar do pedido realizado em *${formatDate(pedido.data)}*:\n`;
+    msg += `📦 *Itens:* ${itemsPreview}\n`;
+    msg += `💰 *Valor total:* *${formatCurrency(total)}*\n\n`;
+    msg += `Se você já efetuou o pagamento, por favor envie o comprovante. Caso contrário, seguem os dados para pagamento. Obrigado! 🙏\n\n`;
+    msg += `_Mensagem enviada via Caderno do Campo 🌿_`;
+
+    const phone = pedido.telefone ? cleanPhone(pedido.telefone) : '';
+    const url = phone
+        ? `https://wa.me/55${phone}?text=${encodeURIComponent(msg)}`
+        : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+
+    window.open(url, '_blank');
+}
+
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', () => {
     loadState();
@@ -785,6 +1107,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set today as default date
     document.getElementById('pedido-data').value = todayStr();
+
+    // Popular filtro de meses inicialmente
+    populateMonthFilter();
 
     // Initial render
     renderDashboard();

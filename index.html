@@ -100,6 +100,17 @@
                         </div>
                     </div>
                 </div>
+                <!-- Histórico Mensal -->
+                <div class="card-section" id="section-historico-mensal">
+                    <div class="card-section-header">
+                        <h3>📊 Histórico Mensal</h3>
+                    </div>
+                    <div id="list-historico-mensal" class="monthly-history-list">
+                        <div class="empty-state">
+                            <p>Nenhum histórico disponível ainda.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- SECTION: NOVO PEDIDO -->
@@ -197,6 +208,11 @@
                         <button class="filter-chip active" data-filter="todos">Todos</button>
                         <button class="filter-chip" data-filter="pendente">⏳ Pendentes</button>
                         <button class="filter-chip" data-filter="pago">✅ Pagos</button>
+                    </div>
+                    <div class="filters-row-2">
+                        <select id="filter-mes-pedidos" class="month-select-filter">
+                            <option value="todos">Todos os meses</option>
+                        </select>
                     </div>
                 </div>
 

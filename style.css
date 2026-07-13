@@ -862,6 +862,194 @@ body {
 /* ---- Utilities ---- */
 .hidden { display: none !important; }
 
+/* ---- Novos Estilos (Pendentes, Cobrança, Preço e Histórico Mensal) ---- */
+.btn-success {
+    background: #2e7d32;
+    color: #fff;
+}
+.btn-success:active { background: #1b5e20; }
+
+.btn-cobrar {
+    background: #e65100;
+    color: #fff;
+}
+.btn-cobrar:active { background: #b23c00; }
+
+/* Chips de Filtro na aba Pedidos */
+.filter-chips {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.filter-chip {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.filter-chip.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(46,125,50,.2);
+}
+
+/* Dropdown de Meses na aba Pedidos */
+.filters-row-2 {
+    margin-top: 10px;
+}
+
+.month-select-filter {
+    width: 100%;
+    height: 40px;
+    font-family: var(--font);
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    background: var(--bg-card);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.month-select-filter:focus {
+    border-color: var(--primary);
+}
+
+/* Checkbox de salvar preço padrão */
+.item-row-price-update {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.price-update-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.price-update-label input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+/* Histórico Mensal no Painel */
+.monthly-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.monthly-item {
+    background: #fafcf8;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.15s;
+}
+
+.monthly-item:active {
+    transform: scale(0.99);
+    background-color: #f0f4ec;
+}
+
+.monthly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.monthly-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--primary-dark);
+}
+
+.monthly-total {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+}
+
+/* Barra de progresso Pago vs Pendente */
+.monthly-progress-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #e0e0e0;
+    width: 100%;
+}
+
+.progress-pago {
+    background: var(--primary-light);
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.progress-pendente {
+    background: #ff9800;
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.monthly-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+    text-align: center;
+}
+
+.monthly-detail-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.detail-val {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.detail-val.text-success {
+    color: var(--primary);
+}
+
+.detail-val.text-warning {
+    color: #e65100;
+}
+
+.detail-lbl {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
 /* Desktop nicety */
 @media (min-width: 501px) {
     body { align-items: center; padding: 24px 0; }
