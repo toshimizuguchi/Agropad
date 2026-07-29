@@ -1,6 +1,14 @@
+import os
+from dotenv import load_dotenv
+from supabase.client import ClientOptions
 from supabase import create_client, Client
 
-url="https://qpvswuvunvizqqiitfuj.supabase.co"
-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFwdnN3dXZ1bnZpenFxaWl0ZnVqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5ODE2OTMsImV4cCI6MjA5OTU1NzY5M30.r88TueifXdZQtmDvAoV4cPeomyWU1sRfiuy6WQa8rTw"
+load_dotenv()
+url= os.getenv("SUPABASE-URL")
+key=os.getenv("SUPABASE-KEY")
 
-supabase = create_client(url, key)
+
+options = ClientOptions(
+    postgrest_client_timeout=30,  # Tempo limite em segundos
+)
+supabase: Client = create_client(url, key, options=options)
