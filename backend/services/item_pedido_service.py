@@ -5,11 +5,15 @@ def listar_itens_pedidos():
     return resposta.data
 
 def cadastrar_item_pedido(item_pedido : ItemPedido):
-    resposta = supabase.table("itens_pedido").insert({"id_pedido": item_pedido.id_pedido, "produto": item_pedido.produto, "quantidade": item_pedido.quantidade, "preco_unitario": item_pedido.preco_unitario }).execute()
+    subtotal = item_pedido.quantidade * item_pedido.preco_unitario
+    item_pedido.subtotal = subtotal
+    resposta = supabase.table("itens_pedido").insert({"id_pedido": item_pedido.id_pedido, "produto": item_pedido.produto, "quantidade": item_pedido.quantidade, "preco_unitario": item_pedido.preco_unitario, "subtotal": item_pedido.subtotal }).execute()
     return resposta.data
 
 def atualizar_item_pedido(id_item_pedido : int, item_pedido : ItemPedido):
-    resposta = supabase.table("itens_pedido").update({"id_pedido": item_pedido.id_pedido, "produto": item_pedido.produto, "quantidade": item_pedido.quantidade, "preco_unitario": item_pedido.preco_unitario}).eq("id_item_pedido", id_item_pedido ).execute()
+    subtotal = item_pedido.quantidade * item_pedido.preco_unitario
+    item_pedido.subtotal = subtotal
+    resposta = supabase.table("itens_pedido").update({"id_pedido": item_pedido.id_pedido, "produto": item_pedido.produto, "quantidade": item_pedido.quantidade, "preco_unitario": item_pedido.preco_unitario, "subtotal": item_pedido.subtotal}).eq("id_item_pedido", id_item_pedido ).execute()
     return resposta.data
 
 def deletar_item_pedido(id_item_pedido : int):
