@@ -1,4 +1,5 @@
 from backend.conexao import supabase
+from backend.models.clientes import Cliente
 
 def listar_clientes():
     resposta = supabase.table("clientes").select("*").execute()

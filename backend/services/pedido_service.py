@@ -1,4 +1,5 @@
 from backend.conexao import supabase
+from backend.models.pedidos import Pedido
 
 def listar_pedidos():
     resposta = supabase.table("pedidos").select("*").execute()

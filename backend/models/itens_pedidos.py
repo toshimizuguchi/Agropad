@@ -5,4 +5,4 @@ class ItemPedido(BaseModel):
     produto: str
     quantidade: int
     preco_unitario: float
-    subtotal : float
+    subtotal : float = 0.0
