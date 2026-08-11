@@ -4,8 +4,8 @@ from supabase.client import ClientOptions
 from supabase import create_client, Client
 
 load_dotenv()
-url= os.getenv("SUPABASE-URL")
-key=os.getenv("SUPABASE-KEY")
+url= os.getenv("SUPABASE_URL")
+key=os.getenv("SUPABASE_KEY")
 
 
 options = ClientOptions(
