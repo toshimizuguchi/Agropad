@@ -181,3 +181,22 @@ async function listarPedidos() {
   });
 
   mostrarPedidos();
+
+  // Função para mostrar uma seção e esconder as outras
+function mostrarSecao(secaoId) {
+  const secoes = document.querySelectorAll("section");
+  secoes.forEach(secao => {
+    secao.style.display = "none";
+  });
+  document.getElementById(secaoId).style.display = "block";
+}
+
+// Adiciona eventos nos botões/menu
+document.getElementById("btnPainel").addEventListener("click", () => mostrarSecao("painel"));
+document.getElementById("btnNovoPedido").addEventListener("click", () => mostrarSecao("novo-pedido"));
+document.getElementById("btnPedidos").addEventListener("click", () => mostrarSecao("pedidos"));
+document.getElementById("btnProdutos").addEventListener("click", () => mostrarSecao("produtos"));
+document.getElementById("btnConfig").addEventListener("click", () => mostrarSecao("config"));
+
+// Inicializa mostrando o painel
+mostrarSecao("painel");
