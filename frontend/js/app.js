@@ -189,7 +189,7 @@ function renderListaProdutos() {
       <div class="product-item">
         <div class="product-info">
           <span class="product-name">${escapeHtml(p.nome)}</span>
-          <span class="product-price">${formatarMoeda(p.preco)} / caixa</span>
+          <span class="product-price">${formatarMoeda(p.preco)} / caixa · ${formatarMoeda(p.preco / 2)} / meia caixa${p.precoKg ? ` · ${formatarMoeda(p.precoKg)} / kg` : ""}</span>
         </div>
         <div class="product-actions">
           <button class="btn-icon-only" data-action="editar-produto" data-id="${p.id}" title="Editar">✏️</button>
@@ -222,15 +222,17 @@ function initProdutos() {
   document.getElementById("form-produto").addEventListener("submit", () => {
     const nome = document.getElementById("prod-nome").value.trim();
     const preco = parseFloat(document.getElementById("prod-preco").value);
+    const precoKgRaw = document.getElementById("prod-preco-kg").value;
+    const precoKg = precoKgRaw === "" ? null : parseFloat(precoKgRaw);
     if (!nome || isNaN(preco)) return;
 
     const idEdicao = document.getElementById("edit-produto-id").value;
     const produtos = listarProdutosLocal();
     if (idEdicao) {
       const idx = produtos.findIndex(p => p.id === idEdicao);
-      if (idx >= 0) produtos[idx] = { ...produtos[idx], nome, preco };
+      if (idx >= 0) produtos[idx] = { ...produtos[idx], nome, preco, precoKg };
     } else {
-      produtos.push({ id: crypto.randomUUID(), nome, preco });
+      produtos.push({ id: crypto.randomUUID(), nome, preco, precoKg });
     }
     salvarProdutosLocal(produtos);
     resetFormProduto();
@@ -251,6 +253,7 @@ function initProdutos() {
       document.getElementById("edit-produto-id").value = p.id;
       document.getElementById("prod-nome").value = p.nome;
       document.getElementById("prod-preco").value = p.preco;
+      document.getElementById("prod-preco-kg").value = p.precoKg ?? "";
       document.getElementById("btn-salvar-produto").textContent = "Atualizar Produto";
       document.getElementById("btn-cancelar-produto").classList.remove("hidden");
       document.getElementById("prod-nome").focus();
@@ -275,15 +278,20 @@ function criarLinhaItem(itemExistente) {
   row.innerHTML = `
     <div class="item-row-top">
       <select class="select-produto-item"></select>
+      <select class="select-unidade-item">
+        <option value="caixa">Caixa</option>
+        <option value="meia_caixa">Meia caixa</option>
+        <option value="kg">Kg</option>
+      </select>
       <button type="button" class="btn-remove-item" title="Remover">×</button>
     </div>
     <div class="item-row-bottom">
       <div class="item-field">
-        <label>Qtd (caixas)</label>
-        <input type="number" class="input-qtd-item" min="1" step="1" value="${itemExistente?.quantidade || 1}">
+        <label class="label-qtd-item">Qtd (caixas)</label>
+        <input type="number" class="input-qtd-item" min="0.01" step="1" value="${itemExistente?.quantidade || 1}">
       </div>
       <div class="item-field">
-        <label>Preço/cx</label>
+        <label>Preço/un.</label>
         <input type="number" class="input-preco-item" min="0" step="0.01" value="${itemExistente?.preco_unitario ?? ""}">
       </div>
     </div>
@@ -293,15 +301,55 @@ function criarLinhaItem(itemExistente) {
   atualizarSelectsProduto();
 
   if (itemExistente) {
-    // Tenta casar pelo nome do produto salvo no item (backend só guarda texto)
-    const produtoLocal = listarProdutosLocal().find(p => p.nome === itemExistente.produto);
+    // O nome pode vir com sufixo de unidade, ex: "Chuchu - meia caixa" ou "Chuchu - kg"
+    const { nomeBase, unidade } = extrairUnidadeDoNome(itemExistente.produto || "");
+    const produtoLocal = listarProdutosLocal().find(p => p.nome === nomeBase);
     if (produtoLocal) row.querySelector(".select-produto-item").value = produtoLocal.id;
+    row.querySelector(".select-unidade-item").value = unidade;
     row.dataset.idItemPedido = itemExistente.id_item_pedido || "";
-    row.dataset.produtoNome = itemExistente.produto || "";
+    row.dataset.produtoNome = nomeBase || "";
   }
 
+  atualizarLabelQtdELimites(row);
   recalcularSubtotalLinha(row);
   return row;
+}
+
+// Extrai o nome base do produto e a unidade a partir do texto salvo no pedido
+function extrairUnidadeDoNome(textoProduto) {
+  if (textoProduto.endsWith(" - meia caixa")) {
+    return { nomeBase: textoProduto.replace(" - meia caixa", ""), unidade: "meia_caixa" };
+  }
+  if (textoProduto.endsWith(" - kg")) {
+    return { nomeBase: textoProduto.replace(" - kg", ""), unidade: "kg" };
+  }
+  return { nomeBase: textoProduto, unidade: "caixa" };
+}
+
+// Calcula o preço unitário conforme o produto selecionado e a unidade escolhida
+function precoPorUnidade(produtoLocal, unidade) {
+  if (!produtoLocal) return null;
+  if (unidade === "caixa") return produtoLocal.preco;
+  if (unidade === "meia_caixa") return produtoLocal.preco / 2;
+  if (unidade === "kg") return produtoLocal.precoKg ?? null;
+  return null;
+}
+
+// Ajusta o rótulo do campo de quantidade e o step do input conforme a unidade
+function atualizarLabelQtdELimites(row) {
+  const unidade = row.querySelector(".select-unidade-item").value;
+  const label = row.querySelector(".label-qtd-item");
+  const inputQtd = row.querySelector(".input-qtd-item");
+  if (unidade === "caixa") {
+    label.textContent = "Qtd (caixas)";
+    inputQtd.step = "1";
+  } else if (unidade === "meia_caixa") {
+    label.textContent = "Qtd (meias caixas)";
+    inputQtd.step = "1";
+  } else {
+    label.textContent = "Qtd (kg)";
+    inputQtd.step = "0.1";
+  }
 }
 
 function recalcularSubtotalLinha(row) {
@@ -411,11 +459,18 @@ function initNovoPedido() {
   });
 
   document.getElementById("order-items-list").addEventListener("change", (e) => {
-    if (e.target.classList.contains("select-produto-item")) {
-      const produto = listarProdutosLocal().find(p => p.id === e.target.value);
+    if (e.target.classList.contains("select-produto-item") || e.target.classList.contains("select-unidade-item")) {
       const row = e.target.closest(".order-item-row");
+      const produto = listarProdutosLocal().find(p => p.id === row.querySelector(".select-produto-item").value);
+      const unidade = row.querySelector(".select-unidade-item").value;
+      atualizarLabelQtdELimites(row);
       if (produto) {
-        row.querySelector(".input-preco-item").value = produto.preco;
+        const preco = precoPorUnidade(produto, unidade);
+        if (preco === null) {
+          mostrarToast(`Cadastre o preço por kg de "${produto.nome}" para usar essa unidade.`);
+        } else {
+          row.querySelector(".input-preco-item").value = preco;
+        }
         recalcularSubtotalLinha(row);
       }
     }
@@ -435,9 +490,12 @@ function initNovoPedido() {
     const itensForm = linhas.map(row => {
       const idProdutoLocal = row.querySelector(".select-produto-item").value;
       const produtoLocal = listarProdutosLocal().find(p => p.id === idProdutoLocal);
+      const unidade = row.querySelector(".select-unidade-item").value;
+      const nomeBase = produtoLocal ? produtoLocal.nome : (row.dataset.produtoNome || "Produto");
+      const sufixo = unidade === "meia_caixa" ? " - meia caixa" : unidade === "kg" ? " - kg" : "";
       return {
         idItemPedidoExistente: row.dataset.idItemPedido || null,
-        produto: produtoLocal ? produtoLocal.nome : (row.dataset.produtoNome || "Produto"),
+        produto: nomeBase + sufixo,
         quantidade: parseFloat(row.querySelector(".input-qtd-item").value) || 0,
         preco_unitario: parseFloat(row.querySelector(".input-preco-item").value) || 0,
       };

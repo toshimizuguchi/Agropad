@@ -400,6 +400,9 @@ body {
     outline: none;
 }
 
+.select-produto-item { flex: 2; min-width: 0; }
+.select-unidade-item { flex: 1; min-width: 0; }
+
 .item-row-top select:focus { border-color: var(--primary); }
 
 .btn-remove-item {
