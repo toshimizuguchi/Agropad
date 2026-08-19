@@ -588,19 +588,25 @@ function renderPainel() {
   const labels = { hoje: "Hoje", mes: "Este mês", tudo: "Tudo" };
   document.getElementById("painel-periodo-label").textContent = labels[periodoAtivo];
 
-  let faturamento = 0, pendente = 0, cxChuchu = 0, cxPitaya = 0;
+  let faturamento = 0, pendente = 0, cxChuchu = 0, cxPitaya = 0, valorChuchu = 0, valorPitaya = 0;
   pedidos.forEach(p => {
     if (p.pago) faturamento += p.total; else pendente += p.total;
     p.itens.forEach(item => {
       const nome = (item.produto || "").toLowerCase();
-      if (nome.includes("chuchu")) cxChuchu += item.quantidade;
-      if (nome.includes("pitaya")) cxPitaya += item.quantidade;
+      const subtotalItem = item.quantidade * item.preco_unitario;
+      if (nome.includes("chuchu")) { cxChuchu += item.quantidade; valorChuchu += subtotalItem; }
+      if (nome.includes("pitaya")) { cxPitaya += item.quantidade; valorPitaya += subtotalItem; }
     });
   });
+
+  const mediaChuchu = cxChuchu > 0 ? valorChuchu / cxChuchu : 0;
+  const mediaPitaya = cxPitaya > 0 ? valorPitaya / cxPitaya : 0;
 
   document.getElementById("stat-faturamento").textContent = formatarMoeda(faturamento);
   document.getElementById("stat-cx-chuchu").textContent = `${cxChuchu} cx`;
   document.getElementById("stat-cx-pitaya").textContent = `${cxPitaya} cx`;
+  document.getElementById("stat-media-chuchu").textContent = `Média: ${formatarMoeda(mediaChuchu)}`;
+  document.getElementById("stat-media-pitaya").textContent = `Média: ${formatarMoeda(mediaPitaya)}`;
   document.getElementById("stat-pendente").textContent = formatarMoeda(pendente);
   document.getElementById("stat-pedidos").textContent = pedidos.length;
 
