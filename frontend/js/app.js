@@ -11,7 +11,17 @@
    aparelhos). Tudo o mais (clientes, pedidos, itens) vem do backend.
    ============================================================ */
 
+
 const API_BASE_URL = "https://agropad.onrender.com";
+let SENHA = localStorage.getItem("agropad_senha_api");  // para testes locais, não é seguro em produção
+if(!SENHA){
+  SENHA = prompt("Digite a senha da API:");
+  if(SENHA){
+    localStorage.setItem("agropad_senha_api", SENHA);
+  } else {
+    alert("Senha não fornecida. A aplicação não funcionará corretamente.");
+}
+}
 
 // ---------------- Utils ----------------
 function formatarMoeda(valor) {
@@ -51,7 +61,7 @@ function escapeHtml(str) {
 // ---------------- Chamadas à API ----------------
 async function apiFetch(path, options) {
   const resp = await fetch(`${API_BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "x-api-key": SENHA },
     ...options,
   });
   if (!resp.ok) {
