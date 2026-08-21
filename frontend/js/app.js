@@ -11,21 +11,15 @@
    aparelhos). Tudo o mais (clientes, pedidos, itens) vem do backend.
    ============================================================ */
 
-
 const API_BASE_URL = "https://agropad.onrender.com";
-let SENHA = localStorage.getItem("agropad_senha_api");  // para testes locais, não é seguro em produção
-if(!SENHA){
-  SENHA = prompt("Digite a senha da API:");
-  if(SENHA){
-    localStorage.setItem("agropad_senha_api", SENHA);
-  } else {
-    alert("Senha não fornecida. A aplicação não funcionará corretamente.");
-}
-}
 
 // ---------------- Utils ----------------
 function formatarMoeda(valor) {
   return (valor || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+
+function formatarCaixas(valor) {
+  return (valor || 0).toLocaleString("pt-BR", { maximumFractionDigits: 2 });
 }
 
 function formatarDataBR(isoDate) {
@@ -61,7 +55,7 @@ function escapeHtml(str) {
 // ---------------- Chamadas à API ----------------
 async function apiFetch(path, options) {
   const resp = await fetch(`${API_BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json", "x-api-key": SENHA },
+    headers: { "Content-Type": "application/json" },
     ...options,
   });
   if (!resp.ok) {
@@ -298,7 +292,7 @@ function criarLinhaItem(itemExistente) {
     <div class="item-row-bottom">
       <div class="item-field">
         <label class="label-qtd-item">Qtd (caixas)</label>
-        <input type="number" class="input-qtd-item" min="0.01" step="1" value="${itemExistente?.quantidade || 1}">
+        <input type="number" class="input-qtd-item" min="1" step="1" value="${itemExistente?.quantidade || 1}">
       </div>
       <div class="item-field">
         <label>Preço/un.</label>
@@ -353,12 +347,15 @@ function atualizarLabelQtdELimites(row) {
   if (unidade === "caixa") {
     label.textContent = "Qtd (caixas)";
     inputQtd.step = "1";
+    inputQtd.min = "1";
   } else if (unidade === "meia_caixa") {
     label.textContent = "Qtd (meias caixas)";
     inputQtd.step = "1";
+    inputQtd.min = "1";
   } else {
     label.textContent = "Qtd (kg)";
     inputQtd.step = "0.1";
+    inputQtd.min = "0.1";
   }
 }
 
@@ -591,6 +588,17 @@ function filtrarPorPeriodo(pedidos, periodo) {
   return pedidos;
 }
 
+// Reconhece frações escritas no texto do produto (ex: "Chuchu 1/2", "Pitaya 1/4",
+// "meia caixa", "1/2 cx"...) e devolve o multiplicador equivalente em caixas.
+function extrairFracaoCaixa(textoProduto) {  const texto = (textoProduto || "").toLowerCase();
+  if (texto.includes(" - meia caixa")) return 0.5;
+  if (texto.includes(" - kg")) return null; // kg não é comparável a caixa, não entra na contagem
+  if (/\b3\/4\b|0[.,]75/.test(texto)) return 0.75;
+  if (/\b1\/4\b|0[.,]25|quarto/.test(texto)) return 0.25;
+  if (/\b1\/2\b|0[.,]5\b|meia|meio/.test(texto)) return 0.5;
+  return 1;
+}
+
 function renderPainel() {
   const todosPedidos = pedidosCompletos();
   const pedidos = filtrarPorPeriodo(todosPedidos, periodoAtivo);
@@ -604,8 +612,11 @@ function renderPainel() {
     p.itens.forEach(item => {
       const nome = (item.produto || "").toLowerCase();
       const subtotalItem = item.quantidade * item.preco_unitario;
-      if (nome.includes("chuchu")) { cxChuchu += item.quantidade; valorChuchu += subtotalItem; }
-      if (nome.includes("pitaya")) { cxPitaya += item.quantidade; valorPitaya += subtotalItem; }
+      const fracao = extrairFracaoCaixa(nome);
+      if (fracao === null) return; // item em kg, não conta em caixas
+      const caixasEquivalentes = item.quantidade * fracao;
+      if (nome.includes("chuchu")) { cxChuchu += caixasEquivalentes; valorChuchu += subtotalItem; }
+      if (nome.includes("pitaya")) { cxPitaya += caixasEquivalentes; valorPitaya += subtotalItem; }
     });
   });
 
@@ -613,8 +624,8 @@ function renderPainel() {
   const mediaPitaya = cxPitaya > 0 ? valorPitaya / cxPitaya : 0;
 
   document.getElementById("stat-faturamento").textContent = formatarMoeda(faturamento);
-  document.getElementById("stat-cx-chuchu").textContent = `${cxChuchu} cx`;
-  document.getElementById("stat-cx-pitaya").textContent = `${cxPitaya} cx`;
+  document.getElementById("stat-cx-chuchu").textContent = `${formatarCaixas(cxChuchu)} cx`;
+  document.getElementById("stat-cx-pitaya").textContent = `${formatarCaixas(cxPitaya)} cx`;
   document.getElementById("stat-media-chuchu").textContent = `Média: ${formatarMoeda(mediaChuchu)}`;
   document.getElementById("stat-media-pitaya").textContent = `Média: ${formatarMoeda(mediaPitaya)}`;
   document.getElementById("stat-pendente").textContent = formatarMoeda(pendente);
