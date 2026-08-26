@@ -610,6 +610,7 @@ function extrairFracaoCaixa(textoProduto) {  const texto = (textoProduto || "").
 }
 
 function renderPainel() {
+  criarBotaoCobrarTodos();
   const todosPedidos = pedidosCompletos();
   const pedidos = filtrarPorPeriodo(todosPedidos, periodoAtivo);
 
@@ -851,8 +852,91 @@ function montarMensagemPedido(pedido) {
   return `Olá ${pedido.cliente}! Segue o resumo do seu pedido (${formatarDataBR(pedido.data)}):\n${itens}\n\nTotal: ${formatarMoeda(pedido.total)}\nStatus: ${pedido.pago ? "Pago ✅" : "Pendente ⏳"}`;
 }
 
-function montarMensagemCobranca(pedido) {
-  return `Olá ${pedido.cliente}! Passando para lembrar do pedido de ${formatarDataBR(pedido.data)}, no valor de ${formatarMoeda(pedido.total)}, que ainda está pendente. Pode confirmar o pagamento? 🙏`;
+ pendentes.forEach(p => {
+    const chave = p.id_cliente ?? p.cliente;
+    if (!grupos[chave]) {
+      grupos[chave] = { cliente: p.cliente, telefone: p.telefone, pedidos: [], total: 0 };
+    }
+    grupos[chave].pedidos.push(p);
+    grupos[chave].total += p.total;
+  });
+  return Object.values(grupos).sort((a, b) => b.total - a.total);
+
+
+function montarMensagemCobrancaLote(grupo) {
+  const varios = grupo.pedidos.length > 1;
+  const linhas = grupo.pedidos
+    .map(p => `- ${formatarDataBR(p.data)}: ${formatarMoeda(p.total)}`)
+    .join("\n");
+  return `Olá ${grupo.cliente}! Passando para lembrar ${varios ? "dos pedidos pendentes" : "do pedido pendente"}:\n${linhas}\n\nTotal pendente: ${formatarMoeda(grupo.total)}\nPode confirmar o pagamento? 🙏`;
+}
+
+function criarBotaoCobrarTodos() {
+  if (document.getElementById("btn-cobrar-todos")) return; // já existe
+
+  const container = document.getElementById("list-pendentes-dashboard")?.parentElement;
+  if (!container) return;
+
+  const btn = document.createElement("button");
+  btn.id = "btn-cobrar-todos";
+  btn.textContent = "📢 Cobrar Todos";
+  btn.style.cssText = "margin:8px 0;padding:8px 14px;border:none;border-radius:8px;background:#25D366;color:#fff;font-weight:600;cursor:pointer;";
+  btn.addEventListener("click", abrirPainelCobrarTodos);
+
+  container.insertBefore(btn, document.getElementById("list-pendentes-dashboard"));
+}
+
+function abrirPainelCobrarTodos() {
+  const grupos = agruparPendentesPorCliente();
+  if (grupos.length === 0) {
+    mostrarToast("Nenhum pedido pendente! 👍");
+    return;
+  }
+
+  // remove painel anterior, se existir
+  document.getElementById("overlay-cobrar-todos")?.remove();
+
+  const overlay = document.createElement("div");
+  overlay.id = "overlay-cobrar-todos";
+  overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;";
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) overlay.remove(); });
+
+  const painel = document.createElement("div");
+  painel.style.cssText = "background:#fff;border-radius:12px;max-width:420px;width:100%;max-height:80vh;overflow-y:auto;padding:16px;";
+
+  const itensHtml = grupos.map((g, i) => `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee;">
+      <div>
+        <div style="font-weight:600;">${escapeHtml(g.cliente)}</div>
+        <div style="font-size:.85em;color:#666;">${g.pedidos.length} pedido(s) · ${formatarMoeda(g.total)}</div>
+      </div>
+      <button data-idx="${i}" class="btn-enviar-cobranca" style="padding:6px 12px;border:none;border-radius:8px;background:#25D366;color:#fff;cursor:pointer;">
+        Enviar
+      </button>
+    </div>
+  `).join("");
+
+  painel.innerHTML = `
+    <h3 style="margin-top:0;">Cobrar Todos (${grupos.length})</h3>
+    <p style="font-size:.85em;color:#666;">Clique em "Enviar" para abrir o WhatsApp de cada cliente com a cobrança pronta.</p>
+    ${itensHtml}
+    <button id="btn-fechar-cobrar-todos" style="margin-top:14px;width:100%;padding:10px;border:none;border-radius:8px;background:#eee;cursor:pointer;">Fechar</button>
+  `;
+
+  overlay.appendChild(painel);
+  document.body.appendChild(overlay);
+
+  painel.querySelectorAll(".btn-enviar-cobranca").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const grupo = grupos[Number(btn.dataset.idx)];
+      linkWhatsapp(grupo, montarMensagemCobrancaLote(grupo));
+      btn.textContent = "Enviado ✅";
+      btn.disabled = true;
+      btn.style.opacity = "0.6";
+    });
+  });
+
+  document.getElementById("btn-fechar-cobrar-todos").addEventListener("click", () => overlay.remove());
 }
 
 function initModal() {
