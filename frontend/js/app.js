@@ -852,15 +852,7 @@ function montarMensagemPedido(pedido) {
   return `Olá ${pedido.cliente}! Segue o resumo do seu pedido (${formatarDataBR(pedido.data)}):\n${itens}\n\nTotal: ${formatarMoeda(pedido.total)}\nStatus: ${pedido.pago ? "Pago ✅" : "Pendente ⏳"}`;
 }
 
- pendentes.forEach(p => {
-    const chave = p.id_cliente ?? p.cliente;
-    if (!grupos[chave]) {
-      grupos[chave] = { cliente: p.cliente, telefone: p.telefone, pedidos: [], total: 0 };
-    }
-    grupos[chave].pedidos.push(p);
-    grupos[chave].total += p.total;
-  return Object.values(grupos).sort((a, b) => b.total - a.total);
-  });
+
 
 function montarMensagemCobrancaLote(grupo) {
   const varios = grupo.pedidos.length > 1;
@@ -884,11 +876,25 @@ function criarBotaoCobrarTodos() {
 
   container.insertBefore(btn, document.getElementById("list-pendentes-dashboard"));
 }
+function agruparPendentesPorCliente(){
+  const pendentes = pedidosCompletos.filter(p => !p.pago);
+  const grupos = {};
+   pendentes.forEach(p => {
+    const chave = p.id_cliente ?? p.cliente;
+    if (!grupos[chave]) {
+      grupos[chave] = { cliente: p.cliente, telefone: p.telefone, pedidos: [], total: 0 };
+    }
+    grupos[chave].pedidos.push(p);
+    grupos[chave].total += p.total;
+  return Object.values(grupos).sort((a, b) => b.total - a.total);
+  });
+}
 
 function abrirPainelCobrarTodos() {
   const grupos = agruparPendentesPorCliente();
   if (grupos.length === 0) {
     mostrarToast("Nenhum pedido pendente! 👍");
+
     return;
   }
 
