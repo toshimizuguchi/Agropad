@@ -859,9 +859,8 @@ function montarMensagemPedido(pedido) {
     }
     grupos[chave].pedidos.push(p);
     grupos[chave].total += p.total;
-  });
   return Object.values(grupos).sort((a, b) => b.total - a.total);
-
+  });
 
 function montarMensagemCobrancaLote(grupo) {
   const varios = grupo.pedidos.length > 1;
