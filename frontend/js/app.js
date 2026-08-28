@@ -110,11 +110,14 @@ function salvarObsPedido(idPedido, texto) {
   localStorage.setItem(LOCAL_KEYS.obs, JSON.stringify(map));
 }
 
-// ---------------- Cache em memória (recarregado a cada tela) ----------------
+// ---------------- Cache em memória (TTL de 30s para evitar requests desnecessários) ----------------
 let cache = { clientes: [], pedidos: [], itens: [] };
 let carregando = false;
+let ultimaCarga = 0;
+const TTL_CACHE_MS = 30_000; // 30 segundos
 
-async function carregarDados() {
+async function carregarDados(forcar = false) {
+  if (!forcar && Date.now() - ultimaCarga < TTL_CACHE_MS) return; // usa cache recente
   carregando = true;
   try {
     const [clientes, pedidos, itens] = await Promise.all([
@@ -123,6 +126,7 @@ async function carregarDados() {
       api.listarItens(),
     ]);
     cache = { clientes, pedidos, itens };
+    ultimaCarga = Date.now();
   } catch (err) {
     console.error(err);
     mostrarToast("⚠️ Não foi possível conectar à API. Tentando novamente...");
@@ -542,19 +546,15 @@ function initNovoPedido() {
           pago,
         });
 
-        // Substitui todos os itens do pedido (mais simples e seguro que "diff")
+        // Substitui todos os itens do pedido em paralelo (Promise.all = muito mais rápido)
         const itensAntigos = cache.itens.filter(i => i.id_pedido === Number(idEdicao));
-        for (const item of itensAntigos) {
-          await api.deletarItem(item.id_item_pedido);
-        }
-        for (const item of itensForm) {
-          await api.criarItem({
-            id_pedido: Number(idEdicao),
-            produto: item.produto,
-            quantidade: item.quantidade,
-            preco_unitario: item.preco_unitario,
-          });
-        }
+        await Promise.all(itensAntigos.map(item => api.deletarItem(item.id_item_pedido)));
+        await Promise.all(itensForm.map(item => api.criarItem({
+          id_pedido: Number(idEdicao),
+          produto: item.produto,
+          quantidade: item.quantidade,
+          preco_unitario: item.preco_unitario,
+        })));
         salvarObsPedido(idEdicao, obs);
         mostrarToast("Pedido atualizado! ✅");
       } else {
@@ -574,7 +574,7 @@ function initNovoPedido() {
       }
 
       resetFormPedido();
-      await carregarDados();
+      await carregarDados(true); // força revalidação após mutação
       mostrarSecao("section-painel");
     } catch (err) {
       console.error(err);
@@ -876,18 +876,18 @@ function criarBotaoCobrarTodos() {
 
   container.insertBefore(btn, document.getElementById("list-pendentes-dashboard"));
 }
-function agruparPendentesPorCliente(){
-  const pendentes = pedidosCompletos.filter(p => !p.pago);
+function agruparPendentesPorCliente() {
+  const pendentes = pedidosCompletos().filter(p => !p.pago); // corrigido: era pedidosCompletos sem ()
   const grupos = {};
-   pendentes.forEach(p => {
+  pendentes.forEach(p => {
     const chave = p.id_cliente ?? p.cliente;
     if (!grupos[chave]) {
       grupos[chave] = { cliente: p.cliente, telefone: p.telefone, pedidos: [], total: 0 };
     }
     grupos[chave].pedidos.push(p);
     grupos[chave].total += p.total;
-  return Object.values(grupos).sort((a, b) => b.total - a.total);
   });
+  return Object.values(grupos).sort((a, b) => b.total - a.total); // corrigido: return estava dentro do forEach
 }
 
 function abrirPainelCobrarTodos() {
@@ -967,7 +967,7 @@ function initModal() {
       await api.atualizarPedido(pedido.id, { id_cliente: pedido.id_cliente, data_pedido: pedido.data, pago: !pedido.pago });
       mostrarToast(!pedido.pago ? "Marcado como pago! ✅" : "Marcado como pendente.");
       fecharModalPedido();
-      await carregarDados();
+      await carregarDados(true); // força revalidação após mutação
       renderPainel();
     } catch (err) {
       console.error(err);
@@ -991,7 +991,7 @@ function initModal() {
       salvarObsPedido(pedidoAtualModalId, "");
       fecharModalPedido();
       mostrarToast("Pedido excluído.");
-      await carregarDados();
+      await carregarDados(true); // força revalidação após mutação
       renderPainel();
     } catch (err) {
       console.error(err);
@@ -1006,7 +1006,7 @@ function initModal() {
 function initAjustes() {
   document.getElementById("btn-backup-export").addEventListener("click", async () => {
     try {
-      await carregarDados();
+      await carregarDados(true); // backup sempre busca dados frescos
       const dados = {
         clientes: cache.clientes,
         pedidos: cache.pedidos,
@@ -1060,7 +1060,7 @@ function initAjustes() {
       localStorage.removeItem(LOCAL_KEYS.produtos);
       localStorage.removeItem(LOCAL_KEYS.obs);
       mostrarToast("Todos os dados foram apagados.");
-      await carregarDados();
+      await carregarDados(true); // força revalidação após limpar tudo
       renderPainel();
       renderListaProdutos();
     } catch (err) {
