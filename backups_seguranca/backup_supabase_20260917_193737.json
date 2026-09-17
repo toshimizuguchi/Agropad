@@ -1,0 +1,3524 @@
+{
+  "clientes": [
+    {
+      "id_cliente": 21,
+      "nome": "Elizeu",
+      "telefone": "",
+      "created_at": "2026-08-19T05:03:25.514699+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 28,
+      "nome": "Odilon",
+      "telefone": "",
+      "created_at": "2026-08-19T06:25:33.131217+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 29,
+      "nome": "Filho do Donizete",
+      "telefone": "",
+      "created_at": "2026-08-19T06:26:38.13284+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 32,
+      "nome": "Maurício",
+      "telefone": "",
+      "created_at": "2026-08-19T06:38:17.003683+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 37,
+      "nome": "Jonas",
+      "telefone": "",
+      "created_at": "2026-08-19T07:48:50.001414+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 38,
+      "nome": "Marcelo Paraibuna",
+      "telefone": "",
+      "created_at": "2026-08-19T07:49:42.463836+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 40,
+      "nome": "Baba",
+      "telefone": "",
+      "created_at": "2026-08-19T08:24:34.893672+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 41,
+      "nome": "Paulinho",
+      "telefone": "",
+      "created_at": "2026-08-19T09:05:19.673953+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 44,
+      "nome": "Tainho",
+      "telefone": "12997350419",
+      "created_at": "2026-08-19T10:22:16.871412+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 18,
+      "nome": "Adriana Ca",
+      "telefone": "12981544304",
+      "created_at": "2026-08-19T05:01:04.821599+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 19,
+      "nome": "Leandrinho Ca",
+      "telefone": "12996710196",
+      "created_at": "2026-08-19T05:01:48.306369+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 23,
+      "nome": "Marta",
+      "telefone": "12982727180",
+      "created_at": "2026-08-19T05:04:50.870644+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 24,
+      "nome": "Márcio Miranda",
+      "telefone": "12981253846",
+      "created_at": "2026-08-19T05:05:34.597764+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 33,
+      "nome": "Zaman",
+      "telefone": "12997843205",
+      "created_at": "2026-08-19T06:38:41.257359+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 35,
+      "nome": "Marcos S. Ines",
+      "telefone": "12982616374",
+      "created_at": "2026-08-19T06:40:09.097906+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 42,
+      "nome": "Vinícius VS",
+      "telefone": "12992286935",
+      "created_at": "2026-08-19T09:07:11.187833+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 43,
+      "nome": "Freire",
+      "telefone": "12974037535",
+      "created_at": "2026-08-19T09:36:53.580479+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 45,
+      "nome": "Zé do Bosque",
+      "telefone": "12988162131",
+      "created_at": "2026-08-19T10:42:48.928543+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 22,
+      "nome": "Zé Carlos",
+      "telefone": "12982097222",
+      "created_at": "2026-08-19T05:03:59.503171+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 26,
+      "nome": "Flávio",
+      "telefone": "12974040155",
+      "created_at": "2026-08-19T05:25:41.679502+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 34,
+      "nome": "Robson",
+      "telefone": "12997726547",
+      "created_at": "2026-08-19T06:39:29.669237+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 39,
+      "nome": "Rodolfo",
+      "telefone": "12997025522",
+      "created_at": "2026-08-19T07:52:26.508561+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 30,
+      "nome": "Luis Carlos",
+      "telefone": "12988950105",
+      "created_at": "2026-08-19T06:36:35.364196+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 31,
+      "nome": "Márcio Jacareí",
+      "telefone": "12974056051",
+      "created_at": "2026-08-19T06:37:21.73512+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 20,
+      "nome": "BF",
+      "telefone": "12996512871",
+      "created_at": "2026-08-19T05:02:32.132211+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 36,
+      "nome": "Giovane",
+      "telefone": "12974028021",
+      "created_at": "2026-08-19T07:41:32.081184+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 25,
+      "nome": "Murata",
+      "telefone": "12981058972",
+      "created_at": "2026-08-19T05:25:07.373233+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 27,
+      "nome": "Por do sol",
+      "telefone": "12988300689",
+      "created_at": "2026-08-19T06:22:29.001495+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 46,
+      "nome": "Julio Caçapava",
+      "telefone": "12988259405",
+      "created_at": "2026-08-20T01:51:10.489563+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 47,
+      "nome": "Welington Ceasa",
+      "telefone": "12974068005",
+      "created_at": "2026-08-20T01:53:23.083547+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 48,
+      "nome": "Graça",
+      "telefone": "12996566039",
+      "created_at": "2026-08-20T01:54:15.342798+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 49,
+      "nome": "Tiago Machado",
+      "telefone": "12997431206",
+      "created_at": "2026-08-20T01:54:59.630257+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 50,
+      "nome": "Gilson",
+      "telefone": "12988122147",
+      "created_at": "2026-08-20T01:55:42.796636+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 51,
+      "nome": "Dito Lino",
+      "telefone": "12997023549",
+      "created_at": "2026-08-20T01:56:20.856493+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 52,
+      "nome": "Josias S. Branca",
+      "telefone": "12997362224",
+      "created_at": "2026-08-20T01:57:14.697238+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 53,
+      "nome": "Pacheco",
+      "telefone": "12997791851",
+      "created_at": "2026-08-20T01:57:51.890563+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 54,
+      "nome": "Val",
+      "telefone": "",
+      "created_at": "2026-08-21T06:15:14.703305+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 55,
+      "nome": "Luizão",
+      "telefone": "",
+      "created_at": "2026-08-21T06:37:28.323994+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 56,
+      "nome": "Flavio",
+      "telefone": "",
+      "created_at": "2026-08-21T06:53:12.056995+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 57,
+      "nome": "Boi",
+      "telefone": "",
+      "created_at": "2026-08-21T06:55:30.102647+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 58,
+      "nome": "Odiad",
+      "telefone": "",
+      "created_at": "2026-08-21T07:18:41.101288+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 59,
+      "nome": "Cliente",
+      "telefone": "",
+      "created_at": "2026-08-21T07:22:37.554248+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 60,
+      "nome": "Odias",
+      "telefone": "",
+      "created_at": "2026-08-21T07:36:28.827971+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 61,
+      "nome": "Filho Donizete",
+      "telefone": "",
+      "created_at": "2026-08-21T10:22:40.030089+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 62,
+      "nome": "Tom",
+      "telefone": "",
+      "created_at": "2026-08-21T10:54:56.814176+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 63,
+      "nome": "Andre Cerro Azul",
+      "telefone": "",
+      "created_at": "2026-08-26T05:49:32.926469+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 64,
+      "nome": "Manoel",
+      "telefone": "",
+      "created_at": "2026-08-28T07:44:22.761209+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 65,
+      "nome": "Elzeu",
+      "telefone": "",
+      "created_at": "2026-08-28T09:22:26.333816+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 66,
+      "nome": "Sérgio Murata",
+      "telefone": "",
+      "created_at": "2026-08-28T09:25:09.667533+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 67,
+      "nome": "Karina",
+      "telefone": "",
+      "created_at": "2026-09-02T07:24:24.564359+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 68,
+      "nome": "Laércio",
+      "telefone": "",
+      "created_at": "2026-09-11T00:27:06.041498+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 69,
+      "nome": "Alcides",
+      "telefone": "",
+      "created_at": "2026-09-11T00:27:26.46762+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 70,
+      "nome": "Maria",
+      "telefone": "",
+      "created_at": "2026-09-11T00:27:44.389875+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 71,
+      "nome": "Junior",
+      "telefone": "",
+      "created_at": "2026-09-11T00:28:40.994679+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 72,
+      "nome": "Gente Boa",
+      "telefone": "",
+      "created_at": "2026-09-11T00:29:18.298159+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 73,
+      "nome": "Paulão da Carmen",
+      "telefone": "",
+      "created_at": "2026-09-11T00:29:54.47069+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 74,
+      "nome": "Mariana",
+      "telefone": "",
+      "created_at": "2026-09-11T09:56:22.731122+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 75,
+      "nome": "Ad",
+      "telefone": "",
+      "created_at": "2026-09-11T10:00:53.292031+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 76,
+      "nome": "RT",
+      "telefone": "",
+      "created_at": "2026-09-11T10:06:58.952722+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 77,
+      "nome": "Vinicius Pan",
+      "telefone": "",
+      "created_at": "2026-09-11T10:07:47.112165+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 78,
+      "nome": "Osvaldo Boi",
+      "telefone": "",
+      "created_at": "2026-09-11T10:08:46.379583+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 79,
+      "nome": "Sandro",
+      "telefone": "",
+      "created_at": "2026-09-16T10:50:28.632009+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_cliente": 80,
+      "nome": "Vinicius VS",
+      "telefone": "",
+      "created_at": "2026-09-16T10:51:25.535537+00:00",
+      "id_empresa": null
+    }
+  ],
+  "pedidos": [
+    {
+      "id_pedido": 34,
+      "id_cliente": 36,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T07:41:32.72161+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 22,
+      "id_cliente": 25,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:25:08.193802+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 27,
+      "id_cliente": 27,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:30:24.454744+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 54,
+      "id_cliente": 19,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:13:57.894092+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 56,
+      "id_cliente": 54,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:15:15.335779+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 57,
+      "id_cliente": 55,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:37:28.802588+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 58,
+      "id_cliente": 56,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:53:12.780144+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 65,
+      "id_cliente": 53,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:18:11.939809+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 36,
+      "id_cliente": 38,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T07:49:43.023667+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 67,
+      "id_cliente": 38,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:22:07.393787+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 38,
+      "id_cliente": 40,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T08:24:35.346066+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 68,
+      "id_cliente": 59,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:22:38.170018+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 26,
+      "id_cliente": 29,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:26:38.591478+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 25,
+      "id_cliente": 28,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:25:33.731762+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 33,
+      "id_cliente": 35,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:40:09.600754+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 18,
+      "id_cliente": 21,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:03:25.882262+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 63,
+      "id_cliente": 35,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:00:56.490767+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 70,
+      "id_cliente": 59,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T08:24:04.722788+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 16,
+      "id_cliente": 19,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:01:48.861038+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 20,
+      "id_cliente": 23,
+      "data_pedido": "2026-08-19",
+      "pago": false,
+      "created_at": "2026-08-19T05:04:51.354033+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 137,
+      "id_cliente": 19,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:18:59.620968+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 21,
+      "id_cliente": 24,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:05:34.973063+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 166,
+      "id_cliente": 33,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:30:43.700758+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 41,
+      "id_cliente": 43,
+      "data_pedido": "2026-08-19",
+      "pago": false,
+      "created_at": "2026-08-19T09:36:54.835131+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 43,
+      "id_cliente": 45,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T10:42:49.903427+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 19,
+      "id_cliente": 22,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:03:59.91862+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 23,
+      "id_cliente": 26,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:25:42.511393+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 32,
+      "id_cliente": 34,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:39:30.07127+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 37,
+      "id_cliente": 39,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T07:52:27.567923+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 28,
+      "id_cliente": 30,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:36:35.773087+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 29,
+      "id_cliente": 31,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:37:22.10718+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 17,
+      "id_cliente": 20,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:02:32.508877+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 71,
+      "id_cliente": 59,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T08:24:25.833969+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 39,
+      "id_cliente": 41,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T09:05:20.369333+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 66,
+      "id_cliente": 58,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:18:41.656749+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 75,
+      "id_cliente": 61,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T10:22:40.669347+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 76,
+      "id_cliente": 21,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T11:46:56.074202+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 64,
+      "id_cliente": 45,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:01:34.066139+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 69,
+      "id_cliente": 21,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T07:35:51.304563+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 35,
+      "id_cliente": 37,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T07:48:50.794974+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 73,
+      "id_cliente": 44,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T09:49:37.036417+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 79,
+      "id_cliente": 20,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:37:44.00832+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 82,
+      "id_cliente": 34,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:39:10.847104+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 87,
+      "id_cliente": 63,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:49:33.36683+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 94,
+      "id_cliente": 37,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:52:31.152765+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 96,
+      "id_cliente": 27,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T10:35:03.636329+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 92,
+      "id_cliente": 46,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:51:42.504705+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 83,
+      "id_cliente": 40,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:39:35.376519+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 42,
+      "id_cliente": 44,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T10:22:17.664781+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 30,
+      "id_cliente": 32,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:38:17.408549+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 74,
+      "id_cliente": 46,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T09:51:25.229528+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 91,
+      "id_cliente": 62,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:50:59.732499+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 97,
+      "id_cliente": 19,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T04:39:35.209765+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 100,
+      "id_cliente": 59,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T07:40:52.536927+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 102,
+      "id_cliente": 31,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T07:43:02.786525+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 103,
+      "id_cliente": 64,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T07:44:23.370188+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 80,
+      "id_cliente": 21,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:38:12.776275+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 104,
+      "id_cliente": 44,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:21:28.288037+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 128,
+      "id_cliente": 41,
+      "data_pedido": "2026-09-02",
+      "pago": false,
+      "created_at": "2026-09-02T07:22:39.070719+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 107,
+      "id_cliente": 41,
+      "data_pedido": "2026-08-28",
+      "pago": false,
+      "created_at": "2026-08-28T09:24:05.954747+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 108,
+      "id_cliente": 66,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:25:10.32027+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 15,
+      "id_cliente": 18,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T05:01:05.274188+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 55,
+      "id_cliente": 18,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:14:50.734079+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 99,
+      "id_cliente": 21,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T05:01:20.828713+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 109,
+      "id_cliente": 62,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:25:34.595162+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 86,
+      "id_cliente": 45,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:48:34.869776+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 89,
+      "id_cliente": 28,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:50:14.720743+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 112,
+      "id_cliente": 45,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:27:40.755806+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 113,
+      "id_cliente": 19,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:15:55.013653+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 115,
+      "id_cliente": 20,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:17:20.311452+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 119,
+      "id_cliente": 40,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:18:47.025921+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 123,
+      "id_cliente": 30,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:20:28.594874+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 126,
+      "id_cliente": 53,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:21:32.24526+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 127,
+      "id_cliente": 63,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:22:00.835117+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 116,
+      "id_cliente": 39,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:17:42.297271+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 130,
+      "id_cliente": 67,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:24:25.175076+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 154,
+      "id_cliente": 53,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:26:25.748515+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 134,
+      "id_cliente": 41,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T10:00:47.498915+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 129,
+      "id_cliente": 62,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:23:07.173878+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 135,
+      "id_cliente": 23,
+      "data_pedido": "2026-09-10",
+      "pago": false,
+      "created_at": "2026-09-11T00:18:00.452631+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 136,
+      "id_cliente": 54,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:18:36.417465+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 138,
+      "id_cliente": 18,
+      "data_pedido": "2026-09-10",
+      "pago": false,
+      "created_at": "2026-09-11T00:19:35.8916+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 140,
+      "id_cliente": 20,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:20:32.618538+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 144,
+      "id_cliente": 40,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:22:02.980597+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 145,
+      "id_cliente": 62,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:22:39.803176+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 147,
+      "id_cliente": 35,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:23:32.237708+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 148,
+      "id_cliente": 27,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:23:52.829973+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 149,
+      "id_cliente": 41,
+      "data_pedido": "2026-09-10",
+      "pago": false,
+      "created_at": "2026-09-11T00:24:16.217356+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 150,
+      "id_cliente": 39,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:24:58.195574+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 151,
+      "id_cliente": 45,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:25:17.467862+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 152,
+      "id_cliente": 30,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:25:37.784999+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 153,
+      "id_cliente": 59,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:26:00.841534+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 155,
+      "id_cliente": 34,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:26:39.188272+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 156,
+      "id_cliente": 68,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:27:06.390538+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 158,
+      "id_cliente": 70,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:27:44.762096+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 159,
+      "id_cliente": 38,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:28:00.617282+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 160,
+      "id_cliente": 60,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:28:18.985127+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 161,
+      "id_cliente": 71,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:28:41.32883+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 162,
+      "id_cliente": 46,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:28:57.501566+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 163,
+      "id_cliente": 72,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:29:18.692842+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 165,
+      "id_cliente": 32,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:30:20.281418+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 117,
+      "id_cliente": 42,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:18:03.905073+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 98,
+      "id_cliente": 18,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T04:40:32.649802+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 131,
+      "id_cliente": 21,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:25:12.829323+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 114,
+      "id_cliente": 18,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:16:31.563983+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 125,
+      "id_cliente": 46,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:21:10.9828+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 122,
+      "id_cliente": 27,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:20:09.001507+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 78,
+      "id_cliente": 18,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:37:14.424125+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 77,
+      "id_cliente": 19,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:36:14.339646+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 85,
+      "id_cliente": 35,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:48:01.326789+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 95,
+      "id_cliente": 42,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:57:24.48896+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 167,
+      "id_cliente": 23,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T09:55:41.242668+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 171,
+      "id_cliente": 54,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:02:00.766574+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 172,
+      "id_cliente": 21,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:02:47.373437+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 173,
+      "id_cliente": 43,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T10:03:40.141377+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 174,
+      "id_cliente": 62,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:03:59.668476+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 175,
+      "id_cliente": 41,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T10:04:22.138244+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 176,
+      "id_cliente": 45,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:05:04.877666+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 168,
+      "id_cliente": 74,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T09:56:23.745033+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 169,
+      "id_cliente": 19,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T09:56:43.976989+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 139,
+      "id_cliente": 21,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:20:13.646985+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 141,
+      "id_cliente": 52,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:20:55.450818+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 146,
+      "id_cliente": 28,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:23:05.669283+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 157,
+      "id_cliente": 69,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:27:27.227084+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 164,
+      "id_cliente": 73,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:29:54.880948+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 118,
+      "id_cliente": 52,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:18:23.16395+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 121,
+      "id_cliente": 35,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:19:33.746991+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 124,
+      "id_cliente": 28,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:20:46.779953+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 106,
+      "id_cliente": 52,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:22:49.719554+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 81,
+      "id_cliente": 52,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T04:38:45.681906+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 53,
+      "id_cliente": 52,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T00:41:08.875008+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 40,
+      "id_cliente": 42,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T09:07:12.002846+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 133,
+      "id_cliente": 33,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:25:53.07736+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 101,
+      "id_cliente": 24,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T07:42:36.610024+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 110,
+      "id_cliente": 32,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:26:52.269325+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 111,
+      "id_cliente": 33,
+      "data_pedido": "2026-08-28",
+      "pago": true,
+      "created_at": "2026-08-28T09:27:17.47343+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 84,
+      "id_cliente": 24,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:46:35.502441+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 88,
+      "id_cliente": 33,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:49:50.887285+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 90,
+      "id_cliente": 32,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:50:43.206827+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 93,
+      "id_cliente": 41,
+      "data_pedido": "2026-08-26",
+      "pago": true,
+      "created_at": "2026-08-26T05:52:07.916363+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 59,
+      "id_cliente": 32,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:54:29.159289+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 60,
+      "id_cliente": 33,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:54:53.524052+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 61,
+      "id_cliente": 57,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:55:30.483829+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 62,
+      "id_cliente": 24,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T06:55:50.430673+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 142,
+      "id_cliente": 24,
+      "data_pedido": "2026-09-10",
+      "pago": true,
+      "created_at": "2026-09-11T00:21:23.611525+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 120,
+      "id_cliente": 24,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:19:07.099485+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 132,
+      "id_cliente": 32,
+      "data_pedido": "2026-09-02",
+      "pago": true,
+      "created_at": "2026-09-02T07:25:34.972921+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 180,
+      "id_cliente": 39,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:07:16.171569+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 183,
+      "id_cliente": 24,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T10:09:23.622402+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 184,
+      "id_cliente": 32,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T10:09:42.689925+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 185,
+      "id_cliente": 33,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T10:10:02.245039+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 186,
+      "id_cliente": 18,
+      "data_pedido": "2026-09-11",
+      "pago": false,
+      "created_at": "2026-09-11T14:48:01.443311+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 187,
+      "id_cliente": 19,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T05:04:05.998796+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 188,
+      "id_cliente": 18,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T05:04:25.980126+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 189,
+      "id_cliente": 20,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T05:04:49.323753+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 190,
+      "id_cliente": 21,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T05:05:21.714247+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 191,
+      "id_cliente": 78,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T09:41:02.059597+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 192,
+      "id_cliente": 23,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:27:51.73345+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 193,
+      "id_cliente": 44,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:28:59.862373+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 194,
+      "id_cliente": 54,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:43:47.206503+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 195,
+      "id_cliente": 28,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:44:13.328458+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 196,
+      "id_cliente": 24,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:44:37.313801+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 197,
+      "id_cliente": 52,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:45:44.611554+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 198,
+      "id_cliente": 31,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:46:05.222275+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 199,
+      "id_cliente": 53,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:46:29.715205+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 200,
+      "id_cliente": 62,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:46:47.570258+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 201,
+      "id_cliente": 41,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:47:08.638919+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 202,
+      "id_cliente": 38,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:47:34.308438+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 203,
+      "id_cliente": 35,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:48:04.1285+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 204,
+      "id_cliente": 39,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:48:40.561432+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 205,
+      "id_cliente": 34,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:49:01.377348+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 206,
+      "id_cliente": 21,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:49:25.122735+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 208,
+      "id_cliente": 79,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:50:29.518629+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 209,
+      "id_cliente": 27,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:50:50.174705+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 210,
+      "id_cliente": 80,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:51:25.911621+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 211,
+      "id_cliente": 32,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:51:47.954347+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 212,
+      "id_cliente": 33,
+      "data_pedido": "2026-09-16",
+      "pago": false,
+      "created_at": "2026-09-16T10:52:05.122638+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 207,
+      "id_cliente": 46,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T10:49:56.515271+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 178,
+      "id_cliente": 46,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:06:29.206851+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 177,
+      "id_cliente": 44,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:05:42.070632+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 181,
+      "id_cliente": 77,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:07:47.589669+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 182,
+      "id_cliente": 78,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:08:46.739456+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 31,
+      "id_cliente": 33,
+      "data_pedido": "2026-08-19",
+      "pago": true,
+      "created_at": "2026-08-19T06:38:41.57508+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 213,
+      "id_cliente": 45,
+      "data_pedido": "2026-09-16",
+      "pago": true,
+      "created_at": "2026-09-16T12:51:40.396157+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 179,
+      "id_cliente": 76,
+      "data_pedido": "2026-09-11",
+      "pago": true,
+      "created_at": "2026-09-11T10:06:59.339594+00:00",
+      "id_empresa": null
+    },
+    {
+      "id_pedido": 72,
+      "id_cliente": 41,
+      "data_pedido": "2026-08-21",
+      "pago": true,
+      "created_at": "2026-08-21T09:14:55.490774+00:00",
+      "id_empresa": null
+    }
+  ],
+  "itens": [
+    {
+      "id_item_pedido": 108,
+      "id_pedido": 66,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 110,
+      "id_pedido": 75,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 111,
+      "id_pedido": 76,
+      "produto": "Chuchu X",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 112,
+      "id_pedido": 77,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 113,
+      "id_pedido": 78,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 114,
+      "id_pedido": 78,
+      "produto": "Chuchu 2G",
+      "quantidade": 2,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 115,
+      "id_pedido": 79,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 116,
+      "id_pedido": 80,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 117,
+      "id_pedido": 81,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 118,
+      "id_pedido": 82,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 119,
+      "id_pedido": 83,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 120,
+      "id_pedido": 84,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 121,
+      "id_pedido": 85,
+      "produto": "Chuchu 3A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 122,
+      "id_pedido": 86,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 124,
+      "id_pedido": 88,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 125,
+      "id_pedido": 89,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 126,
+      "id_pedido": 90,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 127,
+      "id_pedido": 91,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 128,
+      "id_pedido": 92,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 129,
+      "id_pedido": 93,
+      "produto": "Chuchu 1 G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 130,
+      "id_pedido": 94,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 131,
+      "id_pedido": 95,
+      "produto": "Chuchu 2A",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 132,
+      "id_pedido": 87,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 22,
+      "id_pedido": 18,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 133,
+      "id_pedido": 96,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 134,
+      "id_pedido": 97,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 137,
+      "id_pedido": 98,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 138,
+      "id_pedido": 98,
+      "produto": "Chuchu 2G",
+      "quantidade": 2,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 29,
+      "id_pedido": 25,
+      "produto": "Chuchu4A 1/2",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 30,
+      "id_pedido": 26,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 139,
+      "id_pedido": 99,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 140,
+      "id_pedido": 100,
+      "produto": "Chuchu 3A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 141,
+      "id_pedido": 101,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 34,
+      "id_pedido": 30,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 142,
+      "id_pedido": 102,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 143,
+      "id_pedido": 103,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 144,
+      "id_pedido": 104,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 39,
+      "id_pedido": 35,
+      "produto": "Chuchu4A 1/2",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 40,
+      "id_pedido": 36,
+      "produto": "Chuchu 4A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 18.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 146,
+      "id_pedido": 106,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 43,
+      "id_pedido": 38,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 44,
+      "id_pedido": 39,
+      "produto": "Chuchu G 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 148,
+      "id_pedido": 107,
+      "produto": "Chuchu 1 G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 149,
+      "id_pedido": 108,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 150,
+      "id_pedido": 109,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 151,
+      "id_pedido": 110,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 49,
+      "id_pedido": 42,
+      "produto": "Chuchu 3A 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 152,
+      "id_pedido": 111,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 153,
+      "id_pedido": 112,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 52,
+      "id_pedido": 15,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 53,
+      "id_pedido": 15,
+      "produto": "Chuchu 1 G",
+      "quantidade": 3,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 54,
+      "id_pedido": 16,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 55,
+      "id_pedido": 20,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 56,
+      "id_pedido": 21,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 57,
+      "id_pedido": 31,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 58,
+      "id_pedido": 33,
+      "produto": "Chuchu 3A 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 59,
+      "id_pedido": 40,
+      "produto": "Chuchu 2A",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 60,
+      "id_pedido": 41,
+      "produto": "Chuchu Bom kg",
+      "quantidade": 10,
+      "preco_unitario": 3.5,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 61,
+      "id_pedido": 41,
+      "produto": "Chuchu G kg",
+      "quantidade": 47,
+      "preco_unitario": 2.5,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 62,
+      "id_pedido": 43,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 63,
+      "id_pedido": 19,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 64,
+      "id_pedido": 23,
+      "produto": "Chuchu 2A",
+      "quantidade": 2,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 65,
+      "id_pedido": 32,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 66,
+      "id_pedido": 37,
+      "produto": "Chuchu 3A 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 67,
+      "id_pedido": 37,
+      "produto": "Chuchu G 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 68,
+      "id_pedido": 28,
+      "produto": "Chuchu4A 1/2",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 69,
+      "id_pedido": 29,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 70,
+      "id_pedido": 17,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 71,
+      "id_pedido": 34,
+      "produto": "Chuchu 2A",
+      "quantidade": 2,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 72,
+      "id_pedido": 22,
+      "produto": "Chuchu 3A 1/2 cx",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 73,
+      "id_pedido": 27,
+      "produto": "Chuchu 4A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 18.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 155,
+      "id_pedido": 113,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 156,
+      "id_pedido": 114,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 157,
+      "id_pedido": 114,
+      "produto": "Chuchu 1 G",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 158,
+      "id_pedido": 115,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 159,
+      "id_pedido": 116,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 160,
+      "id_pedido": 117,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 161,
+      "id_pedido": 118,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 82,
+      "id_pedido": 53,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 83,
+      "id_pedido": 54,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 84,
+      "id_pedido": 55,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 85,
+      "id_pedido": 55,
+      "produto": "Chuchu 2G",
+      "quantidade": 2,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 86,
+      "id_pedido": 56,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 87,
+      "id_pedido": 57,
+      "produto": "Chuchu 4A 1/2",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 88,
+      "id_pedido": 58,
+      "produto": "Chuchu 2A  1/2",
+      "quantidade": 1,
+      "preco_unitario": 25.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 89,
+      "id_pedido": 59,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 90,
+      "id_pedido": 60,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 91,
+      "id_pedido": 61,
+      "produto": "Chuchu 2A",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 92,
+      "id_pedido": 62,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 93,
+      "id_pedido": 63,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 94,
+      "id_pedido": 64,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 95,
+      "id_pedido": 65,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 162,
+      "id_pedido": 119,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 97,
+      "id_pedido": 67,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 98,
+      "id_pedido": 68,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 99,
+      "id_pedido": 69,
+      "produto": "Chuchu 3A",
+      "quantidade": 1,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 163,
+      "id_pedido": 120,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 101,
+      "id_pedido": 70,
+      "produto": "Chuchu 1 G",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 164,
+      "id_pedido": 121,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 103,
+      "id_pedido": 71,
+      "produto": "Chuchu 4A 1/2",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 104,
+      "id_pedido": 72,
+      "produto": "Chuchu 1 G",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 105,
+      "id_pedido": 73,
+      "produto": "Chuchu 3A",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 106,
+      "id_pedido": 74,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 165,
+      "id_pedido": 122,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 166,
+      "id_pedido": 123,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 167,
+      "id_pedido": 124,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 168,
+      "id_pedido": 125,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 169,
+      "id_pedido": 126,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 170,
+      "id_pedido": 127,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 171,
+      "id_pedido": 128,
+      "produto": "Chuchu 2G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 172,
+      "id_pedido": 129,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 173,
+      "id_pedido": 130,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 174,
+      "id_pedido": 130,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 175,
+      "id_pedido": 131,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 176,
+      "id_pedido": 132,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 177,
+      "id_pedido": 133,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 178,
+      "id_pedido": 134,
+      "produto": "Chuchu 2G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 179,
+      "id_pedido": 135,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 180,
+      "id_pedido": 136,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 181,
+      "id_pedido": 137,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 182,
+      "id_pedido": 138,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 183,
+      "id_pedido": 138,
+      "produto": "Chuchu 2G",
+      "quantidade": 2,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 184,
+      "id_pedido": 139,
+      "produto": "Chuchu X",
+      "quantidade": 2,
+      "preco_unitario": 60.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 185,
+      "id_pedido": 140,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 186,
+      "id_pedido": 141,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 187,
+      "id_pedido": 142,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 189,
+      "id_pedido": 144,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 190,
+      "id_pedido": 145,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 192,
+      "id_pedido": 147,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 194,
+      "id_pedido": 149,
+      "produto": "Chuchu 1 G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 191,
+      "id_pedido": 146,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 193,
+      "id_pedido": 148,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 195,
+      "id_pedido": 150,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 196,
+      "id_pedido": 150,
+      "produto": "Chuchu 3A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 197,
+      "id_pedido": 151,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 198,
+      "id_pedido": 152,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 199,
+      "id_pedido": 153,
+      "produto": "Chuchu X - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 200,
+      "id_pedido": 154,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 201,
+      "id_pedido": 155,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 202,
+      "id_pedido": 156,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 203,
+      "id_pedido": 157,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 204,
+      "id_pedido": 158,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 205,
+      "id_pedido": 159,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 206,
+      "id_pedido": 160,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 207,
+      "id_pedido": 161,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 208,
+      "id_pedido": 162,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 209,
+      "id_pedido": 163,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 210,
+      "id_pedido": 164,
+      "produto": "Chuchu 4A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 35.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 211,
+      "id_pedido": 165,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 212,
+      "id_pedido": 166,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 213,
+      "id_pedido": 167,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 214,
+      "id_pedido": 168,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 215,
+      "id_pedido": 169,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 218,
+      "id_pedido": 171,
+      "produto": "Chuchu 3A 1/4",
+      "quantidade": 1,
+      "preco_unitario": 15.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 219,
+      "id_pedido": 172,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 220,
+      "id_pedido": 173,
+      "produto": "Chuchu Bom kg",
+      "quantidade": 60,
+      "preco_unitario": 3.5,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 221,
+      "id_pedido": 174,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 222,
+      "id_pedido": 175,
+      "produto": "Chuchu 2A",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 223,
+      "id_pedido": 176,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 224,
+      "id_pedido": 177,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 225,
+      "id_pedido": 178,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 226,
+      "id_pedido": 179,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 227,
+      "id_pedido": 180,
+      "produto": "Chuchu 3A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 228,
+      "id_pedido": 181,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 229,
+      "id_pedido": 182,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 230,
+      "id_pedido": 183,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 231,
+      "id_pedido": 184,
+      "produto": "Chuchu 4A",
+      "quantidade": 2,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 232,
+      "id_pedido": 185,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 233,
+      "id_pedido": 186,
+      "produto": "Chuchu 4A",
+      "quantidade": 1,
+      "preco_unitario": 70.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 234,
+      "id_pedido": 186,
+      "produto": "Chuchu 2G",
+      "quantidade": 2,
+      "preco_unitario": 40.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 235,
+      "id_pedido": 187,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 236,
+      "id_pedido": 188,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 237,
+      "id_pedido": 189,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 238,
+      "id_pedido": 190,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 239,
+      "id_pedido": 191,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 240,
+      "id_pedido": 192,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 241,
+      "id_pedido": 193,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 242,
+      "id_pedido": 194,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 2,
+      "preco_unitario": 11.5,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 243,
+      "id_pedido": 195,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 45.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 244,
+      "id_pedido": 196,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 245,
+      "id_pedido": 197,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 246,
+      "id_pedido": 198,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 247,
+      "id_pedido": 199,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 45.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 248,
+      "id_pedido": 200,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 249,
+      "id_pedido": 201,
+      "produto": "Chuchu 3A - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 30.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 250,
+      "id_pedido": 202,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 251,
+      "id_pedido": 203,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 50.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 252,
+      "id_pedido": 204,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 45.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 253,
+      "id_pedido": 205,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 254,
+      "id_pedido": 206,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 255,
+      "id_pedido": 207,
+      "produto": "Chuchu - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 45.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 256,
+      "id_pedido": 208,
+      "produto": "Chuchu 2G - meia caixa",
+      "quantidade": 1,
+      "preco_unitario": 20.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 257,
+      "id_pedido": 209,
+      "produto": "Chuchu 2A  1/2",
+      "quantidade": 1,
+      "preco_unitario": 25.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 258,
+      "id_pedido": 210,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 259,
+      "id_pedido": 211,
+      "produto": "Chuchu",
+      "quantidade": 2,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 260,
+      "id_pedido": 212,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 261,
+      "id_pedido": 213,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 90.0,
+      "id_empresa": null
+    },
+    {
+      "id_item_pedido": 262,
+      "id_pedido": 213,
+      "produto": "Chuchu",
+      "quantidade": 1,
+      "preco_unitario": 80.0,
+      "id_empresa": null
+    }
+  ],
+  "total_clientes": 63,
+  "total_pedidos": 186,
+  "total_itens": 198
+}
